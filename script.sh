@@ -5,8 +5,7 @@
 #------------------------------------------------------------------------------------------
 alias
 echo " "
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/sources.list > /etc/apt/sources.list
+echo "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
 #------------------------------------------------------------------------------------------
 
 
@@ -31,9 +30,15 @@ echo " "
 echo " "
 #------------------------------------------------------------------------------------------
 
+#prompts user for current user
+#------------------------------------------------------------------------------------------
+echo "What is the name of the user you are currently using?"
+read CUSER
+#------------------------------------------------------------------------------------------
 
 #Updates
 #------------------------------------------------------------------------------------------
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/sources.list > /etc/apt/sources.list
 echo "Make sure your update settings are up to date"
 echo " "
 echo "Updates Tab: First two boxes checked,check for updates daily, display security updates immediately,weekly, long term support versions"
@@ -47,13 +52,6 @@ sudo apt-get update
 sudo apt-get install  ufw
 echo " "
 echo " "
-#------------------------------------------------------------------------------------------_
-
-
-#prompts user for current user
-#------------------------------------------------------------------------------------------
-echo "What is the name of the user you are currently using?"
-read CUSER
 #------------------------------------------------------------------------------------------
 
 #Changing Passwords by asking user to place users in passwords.txt
