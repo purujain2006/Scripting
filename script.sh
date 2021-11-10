@@ -5,9 +5,8 @@
 #------------------------------------------------------------------------------------------
 alias
 echo " "
-echo " Remove any unwanted aliases"
-echo " "
-cat /home/$CUSER/Desktop/sources.list > /etc/apt/sources.list
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/sources.list > /etc/apt/sources.list
 #------------------------------------------------------------------------------------------
 
 
@@ -64,18 +63,11 @@ echo " "
 echo "Starting by changing passwords..."
 echo " "
 echo " "
-echo "Enter names of all authorized users (Not yourself)(separated by lines): " /home/$CUSER/Desktop/users.txt
+echo "Enter names of all authorized users (Not yourself)(separated by lines): " /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt
 echo " "
 echo " "
 
-#makes list of users from users.txt
-#readarray -t USERS < /home/$CUSER/Desktop/users.txt
-for i in `cat /home/$CUSER/Desktop/users.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  echo "Done changing password for: " $i " ...";  done
-
-# get length of an array
-#uLen=${#USERS[@]}
-
-#for loop to read all usernames
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  echo "Done changing password for: " $i " ...";  done
 
 echo " "
 echo " "
@@ -88,17 +80,17 @@ echo "Done changing passwords..."
 #------------------------------------------------------------------------------------------
 echo " "
 echo " "
-echo "Add the authorized admins in " /home/$CUSER/Desktop/admins.txt
+echo "Add the authorized admins in " /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt
 echo " "
 echo "Changing admins..."
 echo " "
 echo " "
 
 #for loop to read all usernames
-for i in `cat /home/$CUSER/Desktop/users.txt` ; do sudo gpasswd -d $i sudo > /dev/null 2>&1 ; echo "Removed " $i " as an admin"; done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo gpasswd -d $i sudo > /dev/null 2>&1 ; echo "Removed " $i " as an admin"; done
 
 
-for i in `cat /home/$CUSER/Desktop/admins.txt` ; do sudo gpasswd -a $i sudo > /dev/null 2>&1 ; echo "Added " $i " as an admin"; done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt` ; do sudo gpasswd -a $i sudo > /dev/null 2>&1 ; echo "Added " $i " as an admin"; done
 
 echo " "
 echo " "
@@ -115,9 +107,9 @@ echo "Adding new users..."
 echo " "
 echo " "
 
-for i in `cat /home/$CUSER/Desktop/newusers.txt` ; do sudo useradd $i > /dev/null 2>&1 ; echo $i >> /home/$CUSER/Desktop/users.txt; echo "Added new user " $i ; done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do sudo useradd $i > /dev/null 2>&1 ; echo $i >> /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt; echo "Added new user " $i ; done
 
-for i in `cat /home/$CUSER/Desktop/newusers.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  done
 
 echo "Done adding users "
 echo " "
@@ -130,13 +122,13 @@ echo " "
 echo $CUSER >> users.txt
 
 #list of all non-system users
-grep -E 1[0-9]{3}  /etc/passwd | sed s/:/\ / | awk '{print $1}' > /home/$CUSER/Desktop/allusers.txt
+grep -E 1[0-9]{3}  /etc/passwd | sed s/:/\ / | awk '{print $1}' > /home/$CUSER/Desktop/Scripting-main/Scripting-main/allusers.txt
 
 #list of all bad users
-grep -Fxvf /home/$CUSER/Desktop/users.txt /home/$CUSER/Desktop/allusers.txt > /home/$CUSER/Desktop/badusers.txt
+grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt /home/$CUSER/Desktop/Scripting-main/Scripting-main/allusers.txt > /home/$CUSER/Desktop/Scripting-main/Scripting-main/badusers.txt
 
 #delete all bad users
-for i in `cat /home/$CUSER/Desktop/badusers.txt` ; do sudo deluser $i > /dev/null 2>&1 ; echo "Deleted user " $i;  done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/badusers.txt` ; do sudo deluser $i > /dev/null 2>&1 ; echo "Deleted user " $i;  done
 
 echo "Make sure to check for 0 UID users in /etc/passwd (Press any key and enter to continue)"
 read answer
@@ -147,7 +139,7 @@ sudo nano /etc/passwd
 #unlock users
 #------------------------------------------------------------------------------------------
 
-for i in `cat /home/$CUSER/Desktop/users.txt` ; do sudo usermod -U $i; sudo passwd -u $i; echo "Unlocked user " $i; done 
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo usermod -U $i; sudo passwd -u $i; echo "Unlocked user " $i; done 
 #-----------------------------------------------------------------------------------------
 
 
