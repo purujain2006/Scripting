@@ -1,2 +1,3 @@
 might check out /usr/lightdm in case, might need to configure gdm
 /var/spool/cron for crontabs
+check /var/www/html
