@@ -38,7 +38,7 @@ read CUSER
 
 #Updates
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/sources.list > /etc/apt/sources.list
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sources.list > /etc/apt/sources.list
 echo "Make sure your update settings are up to date"
 echo " "
 echo "Updates Tab: First two boxes checked,check for updates daily, display security updates immediately,weekly, long term support versions"
