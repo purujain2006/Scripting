@@ -6,3 +6,4 @@ check sudoers.d directory for sus files
 /etc/resolv.conf
 check for different versions of php
 check out adduser + deluser conf
+check for backdoors and crontabs
