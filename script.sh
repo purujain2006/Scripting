@@ -3,7 +3,7 @@
 
 #Get rid of all aliases + update sources
 #------------------------------------------------------------------------------------------
-alias -a 
+alias
 
 echo " "
 echo "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
@@ -40,19 +40,20 @@ read CUSER
 
 #Updates
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sources.list > /etc/apt/sources.list
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list > /etc/apt/sources.list
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list.save > /etc/apt/sources.list.save
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/10periodic > /etc/apt/apt.conf.d/10periodic
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/20auto-upgrades > /etc/apt/apt.conf.d/20auto-upgrades
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/50unattended-upgrades > /etc/apt/apt.conf.d/50unattended-upgrades
+echo " "
 echo "Make sure your update settings are up to date"
 echo " "
-echo "First Tab, main (first only), Server for United States"
-echo "Updates Tab: First two boxes checked,check for updates daily, display security updates immediately,weekly, long term support versions"
-echo " "
-echo "Ubuntu Software Tab: Downloadable from internet all checked, download from server from United States, installable from CDROM unchecked"
-echo " "
-echo "Other Software  Tab: Last two checked "
+echo "Make sure updates are displayed immediatly, script takes cares of the rest"
 echo " "
 read ANSWER
-sudo apt-get install apt
 sudo apt-get update
+sudo apt install unattended-upgrades
+sudo apt-get install apt
 sudo apt-get install  ufw
 echo " "
 echo " "
@@ -201,6 +202,89 @@ sudo ufw enable
 #------------------------------------------------------------------------------------------
 #deletes commonly known bad packages
 
+if `grep -Fxq "apache2" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove apache2 -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "mysql" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove mysql-server-5.5 -y > /dev/null 2>&1
+  sudo apt-get --purge autoremove mysql-server-5.6 -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "ssh" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove openssh-client -y > /dev/null 2>&1
+  sudo apt-get --purge autoremove openssh-server -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "samba" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove samba -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "vsftpd" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove vsftpd -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "proftpd" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove proftpd -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "ncftp" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove ncftp -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "tnftp" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove tnftp -y > /dev/null 2>&1
+fi
+
+if `grep -Fxq "tftp" /home/$CUSER/Desktop/Scripting-main/Scripting-main/critical_services.txt`
+then
+    # code if found
+  :
+else
+    # code if not found
+  sudo apt-get --purge autoremove tftp -y > /dev/null 2>&1
+fi
+
 sudo apt-get --purge autoremove four-in-a-row -y > /dev/null 2>&1
 sudo apt-get --purge autoremove freeciv -y > /dev/null 2>&1
 sudo apt-get --purge autoremove hitori -y > /dev/null 2>&1
@@ -264,6 +348,21 @@ sudo apt-get --purge autoremove netcat -y > /dev/null 2>&1
 sudo apt-get --purge autoremove netcat-openbsd -y > /dev/null 2>&1
 sudo apt-get --purge autoremove ettercap -y > /dev/null 2>&1
 sudo apt-get --purge autoremove wireshark -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nginx -y > /dev/null 2>&1
+sudo apt-get --purge autoremove mongodb -y > /dev/null 2>&1
+sudo apt-get --purge autoremove mariadb -y > /dev/null 2>&1
+sudo apt-get --purge autoremove sqlite -y > /dev/null 2>&1
+sudo apt-get --purge autoremove citadel-server -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nagios3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove squid3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove znc -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-irc2 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-ircu -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-hybrid -y > /dev/null 2>&1
+sudo apt-get --purge autoremove vino -y > /dev/null 2>&1
+sudo apt-get --purge autoremove Rdesktop -y > /dev/null 2>&1
+sudo apt-get --purge autoremove Vinagre -y > /dev/null 2>&1
+
 #------------------------------------------------------------------------------------------
 
 #Delete unwanted users
@@ -307,5 +406,27 @@ printf "\033[1;31mDeleting dangerous files...\033[0m\n"
   
   echo "After changing permissions, press any key"
   read yea
+#------------------------------------------------------------------------------------------
+
+#Services
+#------------------------------------------------------------------------------------------
+sudo service ssh restart
+sudo service apache2 restart
+sudo service mysql restart
+sudo service samba restart
+sudo service vsftpd restart
+sudo service proftpd restart
+sudo service ncftp restart
+sudo service tnftp restart
+sudo service tftp restart
+
+printf "\033[1;31mCheck for suspicious services and disable them: \033[0m\n"
+echo " "
+service --status-all
+#------------------------------------------------------------------------------------------
+
+#Locks Root
+#------------------------------------------------------------------------------------------
+usermod -L root
 #------------------------------------------------------------------------------------------
 
