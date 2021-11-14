@@ -1,0 +1,12 @@
+chmod 660 everything in etc
+bash neural network for hacking packages
+
+grep -rRwFins "string" to find string in a thing
+
+cd /home; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt ; cd /root;  grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt; cd /usr/share;   grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cd /sbin; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cat /home/$CUSER/Desktop/weirdfiles.txt
+
+ ^ split by :
+
+fix pam
+
+search /usr/share for suspicious files from users
