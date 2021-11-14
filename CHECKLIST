@@ -8,3 +8,6 @@ check for different versions of php
 check out adduser + deluser conf
 check for backdoors and crontabs
 ss -l looks promising for backdoors
+nopasswdlogin no users
+valid login shells
+etc.
