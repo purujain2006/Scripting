@@ -443,6 +443,12 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/vsftpd.conf > /et
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/smb.conf > /etc/samba/smb.conf
 
+rm -rf /etc/sudoers.d
+
+mkdir /etc/sudoers.d
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/README > /etc/sudoers.d/README
+
 #------------------------------------------------------------------------------------------
 
 #Services
