@@ -10,3 +10,5 @@ cd /home; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | 
 fix pam
 
 search /usr/share for suspicious files from users
+
+smb.conf needs to be fixed by editing user groups and such
