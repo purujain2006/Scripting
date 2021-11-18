@@ -1,4 +1,4 @@
-might check out /usr/lightdm in case, might need to configure gdm
+might check out /usr/lightdm in case, might need to configure gdm and check for no password users in there
 /var/spool/cron for crontabs
 check /var/www/html
 check sudoers.d directory for sus files
