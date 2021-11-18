@@ -9,5 +9,6 @@ check out adduser + deluser conf
 check for backdoors and crontabs
 ss -l looks promising for backdoors
 nopasswdlogin no users
-valid login shells
-etc.
+valid login shells etc.
+chmod -R 600 /etc
+for i in `cat keywords.txt`; do dpkg -l | grep -iw $i; done
