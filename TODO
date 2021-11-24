@@ -1,7 +1,22 @@
 chmod 660 everything in etc
 
+CHANGE ROOT PASSWORD
+chpasswd root:password thingy
 
 grep -rRwFins "string" to find string in a thing
+
+review some of this:
+https://docs.google.com/document/d/1xy_1_Yvkl3f392iD_zV_G_2cig8EciBW/edit
+
+look in /usr/share/bash-completion/completions
+look in /usr/share/applications
+
+end of /etc/fstab:
+#-----------------------------------------------------------------#
+tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
+tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0
+#-----------------------------------------------------------------#
 
 cd /home; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt ; cd /root;  grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt; cd /usr/share;   grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cd /sbin; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cat /home/$CUSER/Desktop/weirdfiles.txt
 
