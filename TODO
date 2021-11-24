@@ -20,3 +20,5 @@ ss -l for backdoors?
 
 /etc/rc.local manual inspection
 /var/spool/cron/crontabs
+/etc/ftpusers for disallowed ftp users
+/etc/bluetooth/main.conf dont allow pairable forever
