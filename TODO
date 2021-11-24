@@ -26,6 +26,7 @@ ss -l for backdoors?
 /etc/bluetooth/main.conf dont allow pairable forever
 
 
+check /etc/group for nopasswdlogin
 
 /etc/bluetooth/input.conf
 #-----------------------------------------------#
@@ -249,5 +250,11 @@ automounting for everything not defined in /etc/fstab, and you can turn it
 back on if desired as easily.
 
 Make sure /etc/gdb is clean
+make sure /etc/gdbinit
 
+check /etc/grub.d/README for suspicious files
+
+List and configure startup processes? sysv-rc-conf --list command
+
+check /etc/skel for weird files (might add malicious files to home directory of any new users created)
 
