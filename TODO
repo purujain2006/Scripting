@@ -1,5 +1,5 @@
 chmod 660 everything in etc
-bash neural network for hacking packages
+
 
 grep -rRwFins "string" to find string in a thing
 
@@ -13,8 +13,9 @@ search /usr/share for suspicious files from users
 
 smb.conf needs to be fixed by editing user groups and such
 
-adduser.conf
-deluser.conf
+ADD THESE LINES TO SCRIPT
+	adduser.conf
+	deluser.conf
 
 /etc/fstab/ manually add rw,user,noexec,nodev,nosuid,utf8 to each partition (/dev/sda01 kinda thing)
 
