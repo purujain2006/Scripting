@@ -5,6 +5,7 @@ chpasswd root:password thingy
 
 grep -rRwFins "string" to find string in a thing
 
+check gui in general
 gui firewall
 bluetooth visibility gui?
 online accounts gui?
