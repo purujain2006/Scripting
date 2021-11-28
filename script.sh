@@ -70,7 +70,7 @@ echo " "
 echo " "
 
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  echo "Done changing password for: " $i " ...";  done
-
+echo "root:%3Ad=y@37Fb9y83@" | sudo chpasswd; echo "Done changing password for: root..."
 echo " "
 echo " "
 echo " "
