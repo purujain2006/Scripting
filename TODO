@@ -1,5 +1,7 @@
 chmod 660 everything in etc
 
+gui settings power, suspend after like 10 minutes of inactivity
+
 CHANGE ROOT PASSWORD
 chpasswd root:password thingy
 
