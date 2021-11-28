@@ -6,7 +6,9 @@ CHANGE ROOT PASSWORD
 chpasswd root:password thingy
 
 grep -rRwFins "string" to find string in a thing
-
+bluetooth visibility off
+Language support gui?
+require encryption password for backup?
 check gui in general
 gui firewall
 bluetooth visibility gui?
