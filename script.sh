@@ -470,6 +470,11 @@ sysctl -ep
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
 
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/users.conf > /etc/lightdm/users.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/adduser.conf > /etc/adduser.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/deluser.conf > /etc/deluser.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sshd_config > /etc/ssh/sshd_config
 
