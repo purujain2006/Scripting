@@ -514,6 +514,49 @@ echo " "
 read k
 #------------------------------------------------------------------------------------------
 
+#/etc/fstab stuff
+#-----------------------------------------------------------------------------
+echo "tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
+tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0" >> /etc/fstab
+space
+printf "\033[31mPut the following into /etc/fstab for the disk partition:\033[0m \n\ndefaults,nodev,noexec,nosuid"
+space
+red "Press y when ready"
+space
+read y
+nano /etc/fstab
+#-----------------------------------------------------------------------------
+
+#/etc sus file permissions
+#-----------------------------------------------------------------------------
+space
+yellow "Check the following files for any wrong permissions in /etc: "
+space
+cd /etc; ls -la -Issl -Irc*.d -Ialternatives -Ifonts -Ialsa -R | grep -v .service | grep -v .target | grep -v .path| grep -v .want | grep -v .socket | grep -v .mount | grep -v .timer | grep .....w..w.
+space
+red "Change the permissions to 600 and then press y"
+space
+read y
+#-----------------------------------------------------------------------------
+
+#plaintext password file
+#-----------------------------------------------------------------------------
+space
+yellow "What is the password of a user?"
+read passwd
+space
+cd /home; grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt >> /home/$CUSER/Desktop/weirdfiles.txt ; cd /root;  grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt; cd /sbin; grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt >> /home/$CUSER/Desktop/weirdfiles.txt; cat /home/$CUSER/Desktop/weirdfiles.txt | cut -d: -f1
+space
+space
+red "REMOVE ANY SUSPICIOUS FILES THAT CONTAIN THAT AND THEN PRESS Y"
+space
+space
+read asd
+#-----------------------------------------------------------------------------
+
+
+
 #Locks Root
 #------------------------------------------------------------------------------------------
 usermod -L root
