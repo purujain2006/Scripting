@@ -555,6 +555,57 @@ space
 read asd
 #-----------------------------------------------------------------------------
 
+#Antivirus and stuff
+#-----------------------------------------------------------------------------
+printf "\033[1;31mScanning for Viruses...\033[0m\n"
+
+
+apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles
+
+#This will download lynis 2.4.0, which may be out of date
+wget https://cisofy.com/files/lynis-2.5.5.tar.gz -O /lynis.tar.gz
+tar -xzf /lynis.tar.gz --directory /usr/share/
+
+#chkrootkit
+printf "\033[1;31mStarting CHKROOTKIT scan...\033[0m\n"
+chkrootkit -q
+space
+red "Ready for the next scan?"
+space
+read y
+
+#Rkhunter
+printf "\033[1;31mStarting RKHUNTER scan...\033[0m\n"
+rkhunter --update
+rkhunter --propupd #Run this once at install
+rkhunter -c --enable all --disable none
+space
+red "Ready for the next scan?"
+space
+read y
+
+#Lynis
+printf "\033[1;31mStarting LYNIS scan...\033[0m\n"
+cd /usr/share/lynis/
+/usr/share/lynis/lynis update info
+/usr/share/lynis/lynis audit system
+space
+red "Ready for the next scan?"
+space
+read y
+
+#ClamAV
+printf "\033[1;31mStarting CLAMAV scan...\033[0m\n"
+systemctl stop clamav-freshclam
+freshclam --stdout
+systemctl start clamav-freshclam
+clamscan -r -i --stdout --exclude-dir="^/sys" /
+space
+red "Ready for the next scan?"
+space
+read y
+
+#-------------------------------------------------------------------------
 
 
 #Locks Root
