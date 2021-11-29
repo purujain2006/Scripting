@@ -1,9 +1,4 @@
-chmod 660 everything in etc
-
 gui settings power, suspend after like 10 minutes of inactivity
-
-CHANGE ROOT PASSWORD
-chpasswd root:password thingy
 
 look in /var/log/apache2 stuff to firewall block from specific ip
 grep -rRwFins "string" to find string in a thing
@@ -24,13 +19,6 @@ https://docs.google.com/document/d/1xy_1_Yvkl3f392iD_zV_G_2cig8EciBW/edit
 look in /usr/share/bash-completion/completions
 look in /usr/share/applications
 
-end of /etc/fstab:
-#-----------------------------------------------------------------#
-tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
-tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
-tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0
-#-----------------------------------------------------------------#
-
 cd /home; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt ; cd /root;  grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt; cd /usr/share;   grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cd /sbin; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "(text to search for)" |  grep txt >> /home/eelric/Desktop/weirdfiles.txt; cat /home/$CUSER/Desktop/weirdfiles.txt
 
  ^ split by :
@@ -40,12 +28,6 @@ fix pam
 search /usr/share for suspicious files from users
 
 smb.conf needs to be fixed by editing user groups and such
-
-ADD THESE LINES TO SCRIPT
-	adduser.conf
-	deluser.conf
-
-/etc/fstab/ manually add rw,user,noexec,nodev,nosuid,utf8 to each partition (/dev/sda01 kinda thing)
 
 ss -l for backdoors?
 
@@ -180,7 +162,7 @@ Templates: templatedb
 # World-readable, and accepts everything but passwords.
 Name: config
 Driver: File
-Mode: 600
+Mode: 644
 Reject-Type: password
 Filename: /var/cache/debconf/config.dat
 
