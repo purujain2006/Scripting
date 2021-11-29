@@ -31,8 +31,8 @@ function dblue(){
 #------------------------------------------------------------------------------------------
 alias
 
-echo " "
-echo "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
+space
+red "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
 read alias
 #------------------------------------------------------------------------------------------
 
@@ -48,19 +48,16 @@ read alias
 
 #LEGAL NOTICE
 #------------------------------------------------------------------------------------------
-echo " "
-echo " "
+space
 echo "Script made by Puru Jain for CyberPatriot. If this script is found, it is not to be used for anyone's use in the CyberPatriot competitions"
-echo " "
-echo " "
-echo "Current working directory is" ; pwd
-echo " "
-echo " "
+space
+yellow "Current working directory is" ; pwd
+space
 #------------------------------------------------------------------------------------------
 
 #prompts user for current user
 #------------------------------------------------------------------------------------------
-echo "What is the name of the user you are currently using?"
+blue "What is the name of the user you are currently using?"
 read CUSER
 #------------------------------------------------------------------------------------------
 
@@ -70,49 +67,41 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list.save > /etc/apt/sources.list.save
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/10periodic > /etc/apt/apt.conf.d/10periodic
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/20auto-upgrades > /etc/apt/apt.conf.d/20auto-upgrades
-echo " "
-echo "Make sure your update settings are up to date"
-echo " "
-echo "Make sure updates are displayed immediatly, script takes cares of the rest"
-echo " "
+space
+red "Make sure your update settings are up to date"
+space
+red "Make sure updates are displayed immediatly, script takes cares of the rest"
+space
 read ANSWER
 sudo apt-get update
 sudo apt install unattended-upgrades -y
 sudo apt-get install apt -y
 sudo apt-get install  ufw -y
-echo " "
-echo " "
+space
 #------------------------------------------------------------------------------------------
 
 #Changing Passwords by asking user to place users in passwords.txt
 #------------------------------------------------------------------------------------------
-echo " "
-echo " "
-echo "Starting by changing passwords..."
-echo " "
-echo " "
-echo "Enter names of all authorized users (Not yourself)(separated by lines): " /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt
-echo " "
-echo " "
+space
+red "Starting by changing passwords..."
+space
+yellow "Enter names of all authorized users (Not yourself)(separated by lines): " /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt
+space
 
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  echo "Done changing password for: " $i " ...";  done
 echo "root:%3Ad=y@37Fb9y83@" | sudo chpasswd; echo "Done changing password for: root..."
-echo " "
-echo " "
-echo " "
-echo " "
+space
+space
 echo "Done changing passwords..."
 #------------------------------------------------------------------------------------------
 
 #Remove unauthorized admins
 #------------------------------------------------------------------------------------------
-echo " "
-echo " "
+space
 echo "Add the authorized admins in " /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt
-echo " "
+space
 echo "Changing admins..."
-echo " "
-echo " "
+space
 
 #for loop to read all usernames
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo gpasswd -d $i sudo > /dev/null 2>&1 ; echo "Removed " $i " as an admin"; done
@@ -120,8 +109,7 @@ for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do
 
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt` ; do sudo gpasswd -a $i sudo > /dev/null 2>&1 ; echo "Added " $i " as an admin"; done
 
-echo " "
-echo " "
+space
 echo "Done changing admins "
 
 
@@ -129,19 +117,16 @@ echo "Done changing admins "
 
 #Add new users 
 #----------------------------------------------------------------------------------------
-echo " "
-echo " "
+space
 echo "Adding new users..."
-echo " "
-echo " "
+space
 
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do sudo useradd $i > /dev/null 2>&1 ; echo $i >> /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt; echo "Added new user " $i ; done
 
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do echo $i:"%3Ad=y@37Fb9y83@" | sudo chpasswd ;  done
 
 echo "Done adding users "
-echo " "
-echo " "
+space
 #----------------------------------------------------------------------------------------
 
 #Delete unauthorized users
@@ -443,8 +428,8 @@ printf "\033[1;31mDeleting dangerous files...\033[0m\n"
 	printf "\033[1;31m777 (Full Permission) Files : \033[0m\n"
 	printf "\033[1;31mConsider changing the permissions of these files\033[0m\n"
   echo " " | cat /tmp/777s
-  echo " "
-  echo " "
+  space
+  space
   
   echo "After changing permissions, press any key"
   read yea
@@ -506,11 +491,11 @@ sudo service tnftp restart
 sudo service tftp restart
 
 printf "\033[1;31mCheck for suspicious services and disable them: \033[0m\n"
-echo " "
+space
 service --status-all
-echo " "
+space
 echo "type something"
-echo " "
+space
 read k
 #------------------------------------------------------------------------------------------
 
