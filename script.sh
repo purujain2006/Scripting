@@ -1,6 +1,32 @@
 #!/bin/bash
 
 
+#functions
+#------------------------------------------------------------------------------------------
+function space () {
+    echo " "
+    echo " "
+}
+function red(){
+  printf "\033[31m$1\033[0m"
+}
+function green(){
+  printf "\033[32m$1\033[0m"
+}
+function yellow(){
+  printf "\033[33m$1\033[0m"
+}
+function blue(){
+  printf "\033[34m$1\033[0m"
+}
+function purple(){
+  printf "\033[35m$1\033[0m"
+}
+function dblue(){
+  printf "\033[36m$1\033[0m"
+}
+#------------------------------------------------------------------------------------------
+
 #Get rid of all aliases + update sources
 #------------------------------------------------------------------------------------------
 alias
@@ -51,9 +77,9 @@ echo "Make sure updates are displayed immediatly, script takes cares of the rest
 echo " "
 read ANSWER
 sudo apt-get update
-sudo apt install unattended-upgrades
-sudo apt-get install apt
-sudo apt-get install  ufw
+sudo apt install unattended-upgrades -y
+sudo apt-get install apt -y
+sudo apt-get install  ufw -y
 echo " "
 echo " "
 #------------------------------------------------------------------------------------------
@@ -196,6 +222,16 @@ sudo ufw enable
 #------------------------------------------------------------------------------------------
 #find /etc/apt -type f -name '*.list' -exec sed -i 's/^#\(deb.*-backports.*\)/\1/; s/^#\(deb.*-updates.*\)/\1/; s/^#\(deb.*-proposed.*\)/\1/; s/^#\(deb.*-security.*\)/\1/' {} +
 #https://askubuntu.com/questions/1093450/how-to-enable-or-disable-updates-security-backports-proposed-repositories
+#------------------------------------------------------------------------------------------
+
+#installs critical stuff
+#------------------------------------------------------------------------------------------
+space
+red "MAKE SURE TO INSTALL CRITICAL SERVICES BEFORE CONTINUING!!!!!!"
+space
+echo "Press y when you are done installing them (in another terminal)"
+read y
+
 #------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------
@@ -365,10 +401,10 @@ sudo apt-get --purge autoremove Vinagre -y > /dev/null 2>&1
 
 #update important packages
 #------------------------------------------------------------------------------------------
-sudo apt install gufw
-sudo apt install firefox
-sudo apt install nautilus
-sudo apt install linux-generic
+sudo apt install gufw -y
+sudo apt install firefox -y
+sudo apt install nautilus -y
+sudo apt install linux-generic -y
 #------------------------------------------------------------------------------------------
 
 #Delete unwanted users
