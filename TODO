@@ -2,6 +2,7 @@ gui settings power, suspend after like 10 minutes of inactivity
 make sudoers.d empty?
 invalid login shells and stuff
 BAD PACKAGES MAYBE
+LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
 look in /var/log/apache2 stuff to firewall block from specific ip
 grep -rRwFins "string" to find string in a thing
