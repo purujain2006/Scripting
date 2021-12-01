@@ -17,6 +17,9 @@ def check out user accounts gui
 Turn on backups? gui
 DETAILS GUI CHECK ALL SETTINGS IMPORTANT
 
+
+PHP LAB
+
 Grant and delete admin priveleges on the mysql database
 
 look at apache 2 stuff
@@ -30,7 +33,7 @@ look at apache 2 stuff
 /etc/php/7.0/cli/php.ini? LOOK AT PHP VERSION 
 
 LOOK AT ALL MYSQL AND STUFF 
-
+LOOK AT LAB
 
 review some of this:
 https://docs.google.com/document/d/1xy_1_Yvkl3f392iD_zV_G_2cig8EciBW/edit
