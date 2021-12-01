@@ -17,6 +17,19 @@ def check out user accounts gui
 Turn on backups? gui
 DETAILS GUI CHECK ALL SETTINGS IMPORTANT
 
+look at apache 2 stuff
+	conf-available
+	conf-enabled
+	mods-available
+	mods-enabled
+	sites-available
+	sites-enabled     <----------- def check this
+
+/etc/php/7.0/cli/php.ini? LOOK AT PHP VERSION 
+
+LOOK AT ALL MYSQL AND STUFF 
+
+
 review some of this:
 https://docs.google.com/document/d/1xy_1_Yvkl3f392iD_zV_G_2cig8EciBW/edit
 
