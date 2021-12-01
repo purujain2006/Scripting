@@ -6,6 +6,14 @@ LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
 https://github.com/Turb0Yoda/CyberPatriot-Scripts/blob/master/harden.sh
 
+https://github.com/Jsitech/JShielder/blob/master/UbuntuServer_18.04LTS/jshielder.sh
+
+LOOK INTO THIS STUFF IT HAS SOME FILE PERMISSION STUFF ^^^^
+
+https://upcloud.com/community/tutorials/scan-ubuntu-server-malware/
+
+COMMADS FROM HERE ^
+
 apt-get install auditd
 	  #install auditing program
 	auditctl -e 1
