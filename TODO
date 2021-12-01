@@ -4,6 +4,8 @@ invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
+https://github.com/Turb0Yoda/CyberPatriot-Scripts/blob/master/harden.sh
+
 apt-get install auditd
 	  #install auditing program
 	auditctl -e 1
