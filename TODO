@@ -4,6 +4,14 @@ invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
+apt-get install auditd
+	  #install auditing program
+	auditctl -e 1
+	  #Enable audits
+	gedit /etc/audit/auditd.conf
+	  #view and modify policies as needed
+
+
 look in /var/log/apache2 stuff to firewall block from specific ip
 grep -rRwFins "string" to find string in a thing
 bluetooth visibility off
