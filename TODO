@@ -17,6 +17,8 @@ def check out user accounts gui
 Turn on backups? gui
 DETAILS GUI CHECK ALL SETTINGS IMPORTANT
 
+Grant and delete admin priveleges on the mysql database
+
 look at apache 2 stuff
 	conf-available
 	conf-enabled
