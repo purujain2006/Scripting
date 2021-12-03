@@ -36,3 +36,55 @@ dpkg -l | grep -i social >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i social engineering >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i rootkit >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i malicious >> /home/$CUSER/Desktop/badfiles.txt
+
+
+sudo apt-get install chkrootkit ufw clamav rkhunter selinux tree auditd bum htop libpam-cracklib symlinks\
+echo "--------------------------------------------"
+			echo "--------------------------------------------"
+			echo "FILES IN USE"
+			#shows files open in memory
+		lsof  -i -n -P
+			echo "--------------------------------------------"
+			echo "--------------------------------------------"
+			echo "SOCKETS IN USE"
+			#shows open sockets
+		sudo ss -pwult | column -t
+			echo "--------------------------------------------"
+			echo "--------------------------------------------"
+			ECHO "NETSTAT tulpn"
+			#same as netstat -anob on Windows
+   		netstat -tulpn
+   			echo "--------------------------------------------"
+			echo "--------------------------------------------"
+			echo "VIEW RUNNING DAEMONS"
+			#view running services
+   		ps -C "$(xlsclients | cut -d' ' -f3 | paste - -s -d ',')" --ppid 2 --pid 2 --deselect -o tty,uid,pid,ppid,args | grep ^?
+   			echo "--------------------------------------------"
+			echo "--------------------------------------------"
+			echo "UNOWNED FILES/PROCESSES"
+			echo "If anything comes up below, it tends to be bad"
+			#LOL
+		ps -eZ | egrep "initrc" | egrep -vw "tr|ps|egrep|bash|awk" | tr ':' ' ' | awk '{ print $NF }'
+    
+    
+    sudo auditctl –e 1 
+    CHECK AUDITCTL STUFF
+    
+    sed -i -e 's/SELINUX=.*/SELINUX=enforcing/' /etc/selinux/config
+		sed -i -e 's/SELINUXTYPE=.*/SELINUXTYPE=mls/' /etc/selinux/config
+		sudo nano /etc/selinux/config 
+    
+    sudo nano /etc/profile
+		sudo nano /etc/bashrc
+		sudo ls -a /etc/profile.d>>~/bashprofile.txt
+    sudo nano /etc/avahi/avahi-daemon.conf
+    #To disable ftp, edit the file /etc/xinetd.d/wu-ftpd, and set the field labeled disable to yes.
+    	cd /etc/rc.d/init.d
+  		./xinted reload
+      
+      sudo nano /etc/motd
+  		sudo nano /etc/issue
+  		sudo nano /etc/issue.net
+  			# "remove any instances of \m, \r, \s, or \v." \
+        
+        sudo nano /etc/default/rsync
