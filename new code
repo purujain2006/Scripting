@@ -4,6 +4,7 @@ dpkg -l | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep IP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i RDP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i remote >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i torrent >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i unathorized >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i  vulnera >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
