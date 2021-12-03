@@ -5,10 +5,8 @@ check sudoers.d directory for sus files
 /etc/hosts
 /etc/resolv.conf
 check for different versions of php
-check out adduser + deluser conf
 check for backdoors and crontabs
 ss -l looks promising for backdoors
 nopasswdlogin no users
 valid login shells etc.
-chmod -R 600 /etc
-for i in `cat keywords.txt`; do dpkg -l | grep -iw $i; done
+Manual Package Inspection
