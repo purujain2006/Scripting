@@ -1,0 +1,24 @@
+dpkg -l | grep -i wireless >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep IP >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i RDP >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i  vulnera >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i crack >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i password >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i Windows >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i bypass >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i gain >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i access >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i backdoor >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i exploit >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i scan >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i brute >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i force >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i malware >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i map >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i network >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i phish >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i hack >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i request >> /home/$CUSER/Desktop/badfiles.txt
