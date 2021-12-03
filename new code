@@ -3,6 +3,8 @@ dpkg -l | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep IP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i RDP >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i remote >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i unathorized >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i  vulnera >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i crack >> /home/$CUSER/Desktop/badfiles.txt
@@ -22,3 +24,14 @@ dpkg -l | grep -i network >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i phish >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i hack >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i request >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i domain >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i dns >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i breach >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i DoS >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i DDoS >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i web >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i clickjack >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i social >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i social engineering >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i rootkit >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i malicious >> /home/$CUSER/Desktop/badfiles.txt
