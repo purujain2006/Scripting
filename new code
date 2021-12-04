@@ -33,10 +33,38 @@ dpkg -l | grep -i DDoS >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i web >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i clickjack >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i social >> /home/$CUSER/Desktop/badfiles.txt
-dpkg -l | grep -i social engineering >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i "social engineer" >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i rootkit >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i malicious >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i ware >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i server >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i telnet >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i SQL >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i injection >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i passive >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i active >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i fingerprint >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i chat >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i call >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i connect >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i talk >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i vino >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i database >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i daemon >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i pop3 >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i IMAP >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i reverse >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i engineer >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i manipulate >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i media >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i audacious >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
+all basic packages, ignore, grep ^ but ignore those packages?
 
 sudo apt-get install chkrootkit ufw clamav rkhunter selinux tree auditd bum htop libpam-cracklib symlinks\
 echo "--------------------------------------------"
