@@ -1,5 +1,6 @@
 dpkg -l | grep -i wireless >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i packet >> /homr/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep IP >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i RDP >> /home/$CUSER/Desktop/badfiles.txt
