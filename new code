@@ -67,7 +67,7 @@ dpkg -l | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
 egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/badfiles.txt
 egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/badfiles.txt >  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
-dpkg-query -l | grep '^Ci' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
+dpkg-query -l | grep '^ii' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
 egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 all basic packages, ignore, grep ^ but ignore those packages?
