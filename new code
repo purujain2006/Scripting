@@ -77,6 +77,7 @@ rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
 #-------------------------------------------------------------------------
 
 
+
 Possible backdoor files (Still need to cover LISTENING STUFF)
 #----------------------------------------------------------------------------------------------
 find / -type f -name "*.pl" 2> /dev/null | grep -vF "/usr"
