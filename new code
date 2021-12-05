@@ -70,7 +70,7 @@ egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /ho
 dpkg-query -l | grep '^ii' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
 egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt'; do dpkg -l | grep $i > Differentsystempackages.txt
 
-for i in `cat /home/$CUSER/Desktop/differentsystempackages.txt`; do dpkg -l | grep $i > /home/$CUSER/Desktop/Differentsystempackages.txt; done
+for i in `cat /home/$CUSER/Desktop/differentsystempackages.txt`; do dpkg -l | grep $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
 
 all basic packages, ignore, grep ^ but ignore those packages?
