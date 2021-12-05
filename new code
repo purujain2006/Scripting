@@ -1,4 +1,7 @@
+Malicious files
+#-------------------------------------------------------------------------
 dpkg -l | grep -i wireless >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i http >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i packet >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
@@ -72,8 +75,9 @@ egrep -v -f /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /ho
 
 for i in `cat /home/$CUSER/Desktop/differentsystempackages.txt`; do dpkg -l | grep $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
+#-------------------------------------------------------------------------
 
-all basic packages, ignore, grep ^ but ignore those packages?
+
 
 sudo apt-get install chkrootkit ufw clamav rkhunter selinux tree auditd bum htop libpam-cracklib symlinks\
 echo "--------------------------------------------"
