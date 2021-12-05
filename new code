@@ -78,6 +78,19 @@ rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
 #-------------------------------------------------------------------------
 
 
+Possible backdoor files (Still need to cover LISTENING STUFF)
+#----------------------------------------------------------------------------------------------
+find / -type f -name "*.pl" 2> /dev/null | grep -vF "/usr"
+find / -type f -name "*.s" 2> /dev/null | grep -vF "/usr"
+find / -type f -name "*.S" 2> /dev/null | grep -vF "/usr"
+find / -type f -name "*.asm" 2> /dev/null | grep -vF "/usr"
+find / -type f -name "*.py" 2> /dev/null | grep -vF "/usr" | grep -v /snap
+find / -type f -name "*.sh" 2> /dev/null | grep -vF "/usr" | grep -v /snap | grep -v /etc
+find / -type f -name "*.rb" 2> /dev/null
+find / -type f -name "*.c" 2> /dev/null | grep -v /usr | grep -v /snap
+find / -type f -name "*.js" 2> /dev/null | grep -v /usr | grep -v /snap | grep -v /etc
+#----------------------------------------------------------------------------------------------
+
 
 sudo apt-get install chkrootkit ufw clamav rkhunter selinux tree auditd bum htop libpam-cracklib symlinks\
 echo "--------------------------------------------"
