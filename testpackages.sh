@@ -1,5 +1,3 @@
-echo "User?"
-read CUSER
 dpkg -l | grep -i wireless >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i http >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
