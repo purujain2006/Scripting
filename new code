@@ -77,7 +77,7 @@ for i in `cat /home/$CUSER/Desktop/differentsystempackages.txt`; do dpkg -l | gr
 rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
 #-------------------------------------------------------------------------
 #awk '!a[$0]++' CHECKTHISfixedlistofpossiblebadstuff.txt
-
+https://askubuntu.com/questions/48886/how-do-i-list-the-default-installed-packages
 
 Possible backdoor files (Still need to cover LISTENING STUFF)
 #----------------------------------------------------------------------------------------------
