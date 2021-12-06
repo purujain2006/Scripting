@@ -22,6 +22,8 @@ dpkg -l | grep -i backdoor >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i exploit >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i scan >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i brute >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i sniff >> /home/$CUSER/Desktop/badfiles.txt
+dpkg -l | grep -i intercept >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i force >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i malware >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i map >> /home/$CUSER/Desktop/badfiles.txt
