@@ -71,9 +71,9 @@ dpkg -l | grep -i audacious >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
 
-egrep -v -f /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -v unity| grep -v gnome | grep -vF "linux-" | grep -v "ubuntu-">  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
+grep -Fxvf /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -v unity| grep -v gnome | grep -vF "linux-" | grep -v "ubuntu-">  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
 dpkg-query -l | grep '^ii' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
-egrep -v -f /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
+grep -Fxvf /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt | grep -v lib | grep -v python | grep -v gir |grep -v unity | grep -v fonts | grep -v gnome | grep -vF "linux-"| grep -v indicator | grep -v qml | grep -v signon | grep -v qt | grep -vF "ubuntu-" | grep -vF "account-" | grep -v conf | grep -v openssh | grep -v apache2 | grep -v samba | grep -v imagemagick | grep -v GNU | grep -v OpenGl > /home/$CUSER/Desktop/differentsystempackagese.txt
 
