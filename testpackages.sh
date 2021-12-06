@@ -79,6 +79,6 @@ cat /home/$CUSER/Desktop/differentsystempackages.txt | grep -v lib | grep -v pyt
 
 for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dpkg -l | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 
-cat /home/$CUSER/Desktop/Differentsystempackages.txt
-
+cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSER/Desktop/removeduplicates.txt | awk '!a[$0]++' /home/$CUSER/Desktop/removeduplicates.txt > /home/$CUSER/Desktop/harmfulpackages.txt
+cat /home/$CUSER/Desktop/harmfulpackages.txt
 rm -rf /home/$CUSER/Desktop/differentsystempackages.txt
