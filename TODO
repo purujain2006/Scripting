@@ -312,3 +312,4 @@ List and configure startup processes? sysv-rc-conf --list command
 
 check /etc/skel for weird files (might add malicious files to home directory of any new users created)
 
+bashrc
