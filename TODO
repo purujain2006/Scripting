@@ -14,7 +14,11 @@ https://github.com/Jsitech/JShielder/blob/master/UbuntuServer_18.04LTS/jshielder
 
 DEF LOOK AT COMMENTS ^^^^^^^^
 
-check for zips
+check for zips (DEF CHECK NOT ADD DIRECTLY TO REMOVE SCRIPT)
+
+Poisoned files 
+
+https://www.sandflysecurity.com/blog/detecting-linux-binary-file-poisoning/
 
 https://upcloud.com/community/tutorials/scan-ubuntu-server-malware/
 
