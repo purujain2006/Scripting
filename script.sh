@@ -76,9 +76,9 @@ red "Make sure updates are displayed immediatly, script takes cares of the rest"
 space
 read ANSWER
 sudo apt update
-sudo apt install unattended-upgrades -y
-sudo apt install apt -y
-sudo apt install  ufw -y
+sudo apt install unattended-upgrades
+sudo apt install apt
+sudo apt install  ufw
 space
 #------------------------------------------------------------------------------------------
 
