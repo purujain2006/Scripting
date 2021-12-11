@@ -4,6 +4,10 @@ invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
+debsums -c for poisoned binary
+
+check /etc/skel and remove all the files from all users if present
+
 https://github.com/Turb0Yoda/CyberPatriot-Scripts/blob/master/harden.sh
 
 https://github.com/Jsitech/JShielder/blob/master/UbuntuServer_18.04LTS/jshielder.sh
