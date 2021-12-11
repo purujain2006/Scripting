@@ -14,11 +14,3 @@
 @include common-account
 @include common-password
 @include common-session
-auth required /lib/security/pam_deny.so
-auth required /lib/security/pam_warn.so
-account required /lib/security/pam_deny.so
-account required /lib/security/pam_warn.so
-password required /lib/security/pam_deny.so
-password required /lib/security/pam_warn.so
-session required /lib/security/pam_deny.so
-session required /lib/security/pam_warn.so
