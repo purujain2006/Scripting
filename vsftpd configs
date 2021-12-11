@@ -1,0 +1,32 @@
+The real differences are in the security and format. The config file /etc/vsftpd.conf specifies the format to be Exactly option=value, with NO additional spacing. 
+anonymous_enable: public/private
+chroot_local_user: chroot local users
+Local_enable: allow local users to connect
+Write_enable: allow users to “write” which means make changes to directories
+ssl_enable: allow TLS/SSL sessions
+chroost list(if only specific users are chrooted):
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd.chroot_list
+secure_chroot_dir =/set/a/secure/chroot/dir
+
+Anonymous server configs:
+Anon_root: where the anonymous user’s home is 
+no_anon_password=YES
+Allow_writeable_chroot: may be necessary for error 500 
+Anon_upload_enable
+Anon_mkdir_write_enable
+NOTE: You may have to set the directory permissions to 555
+
+located at /srv/ftp. The files on the FTP server are business-related and should not be removed. The server should be configured 
+to allow users to download files but not upload or modify files on the server. It should only allow anonymous connections. 
+In addition, management would like to explicitly deny any ability to login to the FTP server as root. This should be 
+configured using the current userlist file.
+
+checkout /etc/systemd later
+
+anonymous_enable=YES
+local_enable=NO
+write_enable=NO
+anon_upload_enable=NO
+anon_mkdir_write_enable=NO
+chroot_local_user=NO
