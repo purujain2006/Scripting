@@ -24,6 +24,8 @@ configured using the current userlist file.
 
 checkout /etc/systemd later
 
+COPY AND PASTE THE FOLLOWING ONTO THE CONFIG FILE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 anonymous_enable=YES
 local_enable=NO
 write_enable=NO
