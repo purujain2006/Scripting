@@ -4,6 +4,8 @@ invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
+CHECK /etc/gdm and other gdm stuff in etc for sus stuff
+
 Manually configure samba.conf bc script isnt ready yet
 
 CHECK FOR BAD PDFS BUT DONT DELETE USING THE SCRIPT?
