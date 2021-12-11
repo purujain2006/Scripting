@@ -34,6 +34,8 @@ alias
 space
 red "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
 read alias
+space
+red "Check for poisoned files by using debsums -c and fix it (research/replace it with correct file)"
 #------------------------------------------------------------------------------------------
 
 
@@ -437,7 +439,7 @@ printf "\033[1;31mDeleting dangerous files...\033[0m\n"
 
 #Configuring Configs
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sudoers > /etc/sudoers
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/ > /etc/sudoers
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/lightdm.conf > /etc/lightdm/lightdm.conf
 
@@ -453,6 +455,8 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /et
 
 sysctl -ep
 
+sudo cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$CUSER/.bashrc
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/users.conf > /etc/lightdm/users.conf
@@ -463,7 +467,10 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/deluser.conf > /e
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sshd_config > /etc/ssh/sshd_config
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/php.ini > /etc/php/7.2/apache2/php.ini
+red " For PHP, type the version down below. i.e. '7.2' "
+read VERSION
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/php.ini > /etc/php/$VERSION/apache2/php.ini
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/vsftpd.conf > /etc/vsftpd.conf
 
@@ -552,10 +559,10 @@ dpkg -l | grep -i audacious >> /home/$CUSER/Desktop/badfiles.txt
 dpkg -l | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
 
-grep -Fxvf /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -v unity| grep -v gnome | grep -vF "linux-" | grep -v "ubuntu-">  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
+grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -v unity| grep -v gnome | grep -vF "linux-" | grep -v "ubuntu-">  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
 
 dpkg-query -l | grep '^ii' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
-grep -Fxvf /home/$CUSER/Desktop/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
+grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt | grep -v lib | grep -v python | grep -v gir |grep -v unity | grep -v fonts | grep -v gnome | grep -vF "linux-"| grep -v indicator | grep -v qml | grep -v signon | grep -v qt | grep -vF "ubuntu-" | grep -vF "account-" | grep -v conf | grep -v openssh | grep -v apache2 | grep -v samba | grep -v imagemagick | grep -v GNU | grep -v OpenGl > /home/$CUSER/Desktop/differentsystempackagese.txt
 
@@ -697,13 +704,46 @@ passwd -l root
 #------------------------------------------------------------------------------------------
 sudo apt install libpam-cracklib
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/common-password > /etc/pam.d/common-password
+rm -rf /etc/pam.d; cp -r /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d /etc/
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/common-auth > /etc/pam.d/common-auth
-
-
+space
+space
+red "Make sure to change all critical service configs to 600 (file perms)"
+space
 sudo chmod 644 /etc/passwd
 sudo chmod 600 /etc/shadow
+chmod 0600 /etc/securetty
+chmod 700 /root
+chmod 600 /boot/grub/grub.cfg
+chmod 600 /etc/cron.allow
+chmod 750 /etc/apache2/conf* >/dev/null 2>&1
+chmod 511 /usr/sbin/apache2 >/dev/null 2>&1
+chmod 750 /var/log/apache2/ >/dev/null 2>&1
+chmod 640 /etc/apache2/conf-available/* >/dev/null 2>&1
+chmod 640 /etc/apache2/conf-enabled/* >/dev/null 2>&1
+chmod 640 /etc/apache2/apache2.conf >/dev/null 2>&1
+chmod og-rwx /boot/grub/grub.cfg
+chmod -R g-wx,o-rwx /var/log/*
+chown root:root /etc/ssh/sshd_config
+chmod og-rwx /etc/ssh/sshd_config
+chown root:root /etc/passwd
+chmod 644 /etc/passwd
+chown root:shadow /etc/shadow
+chmod o-rwx,g-wx /etc/shadow
+chown root:root /etc/group
+chmod 644 /etc/group
+chown root:shadow /etc/gshadow
+chmod o-rwx,g-rw /etc/gshadow
+chown root:root /etc/passwd-
+chmod 600 /etc/passwd-
+chown root:root /etc/shadow-
+chmod 600 /etc/shadow-
+chown root:root /etc/group-
+chmod 600 /etc/group-
+chown root:root /etc/gshadow-
+chmod 600 /etc/gshadow-
+df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d -perm -0002 2>/dev/null | xargs chmod a+t
+
 
 
 sudo apt-get update && upgrade
