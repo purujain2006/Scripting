@@ -75,10 +75,10 @@ space
 red "Make sure updates are displayed immediatly, script takes cares of the rest"
 space
 read ANSWER
-sudo apt-get update
+sudo apt update
 sudo apt install unattended-upgrades -y
-sudo apt-get install apt -y
-sudo apt-get install  ufw -y
+sudo apt install apt -y
+sudo apt install  ufw -y
 space
 #------------------------------------------------------------------------------------------
 
@@ -439,7 +439,7 @@ printf "\033[1;31mDeleting dangerous files...\033[0m\n"
 
 #Configuring Configs
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/ > /etc/sudoers
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sudoers > /etc/sudoers
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/lightdm.conf > /etc/lightdm/lightdm.conf
 
