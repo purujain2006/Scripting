@@ -4,6 +4,8 @@ invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 
+CHECK FOR BAD PDFS BUT DONT DELETE USING THE SCRIPT?
+
 debsums -c for poisoned binary
 
 check /etc/skel and remove all the files from all users if present
