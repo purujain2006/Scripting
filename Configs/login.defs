@@ -173,8 +173,8 @@ UMASK		022
 #	PASS_MIN_DAYS	Minimum number of days allowed between password changes.
 #	PASS_WARN_AGE	Number of days warning given before a password expires.
 #
-PASS_MAX_DAYS	15, 90
-PASS_MIN_DAYS	6, 30
+PASS_MAX_DAYS	15
+PASS_MIN_DAYS	6
 PASS_WARN_AGE	7
 
 
