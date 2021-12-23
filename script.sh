@@ -97,6 +97,22 @@ space
 echo "Done changing passwords..."
 #------------------------------------------------------------------------------------------
 
+#fix shell
+#------------------------------------------------------------------------------------------
+for line in $(cat /etc/passwd | cut -d ":" -f 1)
+	do
+		if [ $(id -u $line) -lt 1000 ]
+		then
+			sudo usermod -s /bin/false $line
+		fi
+		
+		if [ $(id -u $line) -eq 0 ] || [ $(id -u $line) -gt 999 ]
+		then
+			sudo usermod -s /bin/bash $line
+		fi
+	done
+#-----------------------------------------------------------------------------------------
+
 #Remove unauthorized admins
 #------------------------------------------------------------------------------------------
 space
@@ -106,16 +122,17 @@ echo "Changing admins..."
 space
 
 #for loop to read all usernames
-for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo gpasswd -d $i sudo > /dev/null 2>&1 ; echo "Removed " $i " as an admin"; done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo gpasswd -d $i sudo > /dev/null 2>&1 ; sudo gpasswd -d $i adm  > /dev/null 2>&1 ; echo "Removed " $i " as an admin"; done
 
 
-for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt` ; do sudo gpasswd -a $i sudo > /dev/null 2>&1 ; echo "Added " $i " as an admin"; done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/admins.txt` ; do sudo gpasswd -a $i sudo > /dev/null 2>&1 ; sudo gpasswd -a $i adm > /dev/null 2>&1; echo "Added " $i " as an admin"; done
 
 space
 echo "Done changing admins "
 
 
 #------------------------------------------------------------------------------------------
+
 
 #Add new users 
 #----------------------------------------------------------------------------------------
@@ -129,6 +146,11 @@ for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ;
 
 echo "Done adding users "
 space
+#----------------------------------------------------------------------------------------
+
+#chage stuff
+#----------------------------------------------------------------------------------------
+for line in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do chage -M 15 -m 6 -W 7 -I 5 $line; done
 #----------------------------------------------------------------------------------------
 
 #Delete unauthorized users
@@ -389,6 +411,7 @@ sudo apt-get --purge autoremove Vinagre -y > /dev/null 2>&1
 #update important packages
 #------------------------------------------------------------------------------------------
 sudo apt install gufw -y
+sudo apt-mark unhold firefox
 sudo apt install firefox -y
 sudo apt install nautilus -y
 sudo apt install linux-generic -y
@@ -455,6 +478,8 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/rc.local > /etc/r
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /etc/sysctl.conf
 
 sysctl -ep
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
 sudo cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$CUSER/.bashrc
 
