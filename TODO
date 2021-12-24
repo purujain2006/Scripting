@@ -7,6 +7,7 @@ LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
 CHECK /etc/gdm and other gdm stuff in etc for sus stuff
 
 check /usr/games and just /usr in general.
+/etc/shells
 
 Manually configure samba.conf bc script isnt ready yet
 
