@@ -1,6 +1,38 @@
 gui settings power, suspend after like 10 minutes of inactivity
 /etc/udisks2/udisks2.conf should have autostart as mode?
 make sudoers.d empty?
+/etc/hosts.bind ALL:PARANOID
+/etc/fuse.conf should have #allow_other_root commented
+make script nano /etc/gdm3 stuff
+
+
+#########################################################################################################################
+In order to allow the root account login in GUI, we have to modify the following two files.
+
+/etc/gdm3/custom.conf
+/etc/pam.d/gdm-password
+Use any text editor to modify these files.
+
+Edit /etc/gdm3/custom.conf file, and add the following line in the [security] directive and save the file.
+
+AllowRoot=true
+
+DO OPPOSITE OF THIS
+
+#########################################################################################################################
+
+
+#########################################################################################################################
+
+Now open and edit file /etc/pam.d/gdm-password. Add # character in the starting of the following line to make it commented. The commented line will not be executed when the system runs the specified executable file.
+
+auth required pam_succeed_if.so user != root quiet_success
+
+SO UNCOMMENT
+
+
+#########################################################################################################################
+
 invalid login shells and stuff
 BAD PACKAGES MAYBE
 LEARN HOW TO DO MYSQL AND LOOK/MANIPULATE STUFF IN MYSQL DATABASE
