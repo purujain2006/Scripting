@@ -1,7 +1,13 @@
 gui settings power, suspend after like 10 minutes of inactivity
 /etc/udisks2/udisks2.conf should have autostart as mode?
 make sudoers.d empty?
+
+MAYBE DO A HUGEEEEEEEEEEEEEE MANUAL CHECK NEXT COMP YOUR SCRIPT FORGOT A LOT OF STUFF
+
 /etc/hosts.bind ALL:PARANOID
+remove icecast? nginx?
+CHECK FOR DUPLICATE /etc/passwd files
+MAYBE CHECK FOR .txt IN HOME DIRECTORIES???????
 /etc/fuse.conf should have #allow_other_root commented
 make script nano /etc/gdm3 stuff
 pam.conf empty?
