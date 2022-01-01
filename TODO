@@ -7,7 +7,9 @@ make script nano /etc/gdm3 stuff
 pam.conf empty?
 
 /etc/sysctl.d stuff?
-
+/etc/ufw check some config file and other stuff
+default package manager should be apt
+uninstall snap?
 
 #########################################################################################################################
 In order to allow the root account login in GUI, we have to modify the following two files.
