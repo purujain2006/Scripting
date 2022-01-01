@@ -2,6 +2,17 @@ gui settings power, suspend after like 10 minutes of inactivity
 /etc/udisks2/udisks2.conf should have autostart as mode?
 make sudoers.d empty?
 
+###########################################################
+
+dpkg -l | grep -w rc                            #THESE ARE BAD PACKAGES THAT ARE WEIRD APPARENTLY; removed with configs present 
+ 
+https://linuxprograms.wordpress.com/2010/05/12/remove-packages-marked-rc/
+
+###########################################################
+
+
+
+
 MAYBE DO A HUGEEEEEEEEEEEEEE MANUAL CHECK NEXT COMP YOUR SCRIPT FORGOT A LOT OF STUFF
 
 /etc/hosts.bind ALL:PARANOID
