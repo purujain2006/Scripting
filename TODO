@@ -4,6 +4,9 @@ make sudoers.d empty?
 /etc/hosts.bind ALL:PARANOID
 /etc/fuse.conf should have #allow_other_root commented
 make script nano /etc/gdm3 stuff
+pam.conf empty?
+
+/etc/sysctl.d stuff?
 
 
 #########################################################################################################################
