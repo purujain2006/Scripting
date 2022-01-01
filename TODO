@@ -1,4 +1,5 @@
 gui settings power, suspend after like 10 minutes of inactivity
+/etc/udisks2/udisks2.conf should have autostart as mode?
 make sudoers.d empty?
 invalid login shells and stuff
 BAD PACKAGES MAYBE
