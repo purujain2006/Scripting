@@ -1454,7 +1454,6 @@ systemd-timesyncd
 sysvinit-utils
 tar
 tcpdump
-telnet
 thermald
 thunderbird
 thunderbird-gnome-support
