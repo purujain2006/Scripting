@@ -1,5 +1,6 @@
 gui settings power, suspend after like 10 minutes of inactivity
 /etc/udisks2/udisks2.conf should have autostart as mode?
+BACKUP AND THOSE GUI CONFIGS AGAIN
 make sudoers.d empty?
 
 ###########################################################
