@@ -3,6 +3,9 @@ gui settings power, suspend after like 10 minutes of inactivity
 BACKUP AND THOSE GUI CONFIGS AGAIN
 make sudoers.d empty?
 
+COMPARE ALL BIN FILES 
+MANUALLY CHECK "Bad files".txt thingy
+
 ###########################################################
 
 dpkg -l | grep -w rc                            #THESE ARE BAD PACKAGES THAT ARE WEIRD APPARENTLY; removed with configs present 
