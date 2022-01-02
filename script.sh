@@ -587,14 +587,14 @@ dpkg -l | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
 grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -v unity| grep -v gnome | grep -vF "linux-" | grep -v "ubuntu-">  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
 
-dpkg-query -l | grep '^ii' | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
+dpkg-query -l | tail -n+4 | awk '{print $2}' > /home/$CUSER/Desktop/listofallpackages.txt
 grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt | grep -v lib | grep -v python | grep -v gir |grep -v unity | grep -v fonts | grep -v gnome | grep -vF "linux-"| grep -v indicator | grep -v qml | grep -v signon | grep -v qt | grep -vF "ubuntu-" | grep -vF "account-" | grep -v conf | grep -v openssh | grep -v apache2 | grep -v samba | grep -v imagemagick | grep -v GNU | grep -v OpenGl > /home/$CUSER/Desktop/differentsystempackagese.txt
 
 for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dpkg -l | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 
-cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSER/Desktop/removeduplicates.txt | awk '!a[$0]++' /home/$CUSER/Desktop/removeduplicates.txt > /home/$CUSER/Desktop/finallist
+cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSER/Desktop/removeduplicates.txt; sleep 3s; awk '!a[$0]++' /home/$CUSER/Desktop/removeduplicates.txt > /home/$CUSER/Desktop/finallist
 
 cat /home/$CUSER/Desktop/finallist
 
@@ -602,6 +602,7 @@ space
 yellow "Type yes once you are done with packages"
 space
 read e
+
 #------------------------------------------------------------------------------------------
 
 #Services
