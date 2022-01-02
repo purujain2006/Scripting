@@ -1258,7 +1258,6 @@ nautilus-share
 ncurses-base
 ncurses-bin
 netbase
-netcat-openbsd
 netplan.io
 network-manager
 network-manager-config-connectivity-ubuntu
@@ -1272,7 +1271,6 @@ ntfs-3g
 open-vm-tools
 open-vm-tools-desktop
 openprinting-ppds
-openssh-client
 openssl
 openvpn
 orca
@@ -1465,7 +1463,6 @@ systemd-timesyncd
 sysvinit-utils
 tar
 tcpdump
-telnet
 thermald
 thunderbird
 thunderbird-gnome-support
@@ -2757,12 +2754,9 @@ qtdeclarative5-unity-action-plugin:i386
 qttranslations5-l10n
 rdate
 reiserfsprogs
-remmina-plugin-rdp
-remmina-plugin-vnc
 rename
 resolvconf
 rhythmbox-plugin-zeitgeist
-samba-common
 samba-common-bin
 samba-libs:i386
 session-shortcuts
