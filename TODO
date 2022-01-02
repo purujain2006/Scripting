@@ -10,6 +10,11 @@ https://linuxprograms.wordpress.com/2010/05/12/remove-packages-marked-rc/
 
 ###########################################################
 
+do mysql config (in basefiles already; print to another file :| )
+
+kill processess after detecting backdoors
+
+grep -v 631?
 
 
 
