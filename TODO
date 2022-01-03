@@ -3,6 +3,7 @@ gui settings power, suspend after like 10 minutes of inactivity
 BACKUP AND THOSE GUI CONFIGS AGAIN
 make sudoers.d empty?
 require root password for recovery mode?
+https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
 COMPARE ALL BIN FILES 
 MANUALLY CHECK "Bad files".txt thingy
