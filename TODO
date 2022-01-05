@@ -5,6 +5,9 @@ make sudoers.d empty?
 require root password for recovery mode?
 https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
+https://github.com/Ryan-Galligher/CyberPatriot/blob/master/CyberPatriotScript
+REALLY GOOD SCRIPT TAKE SOME PARTS FROM HERE^
+
 chmod 777 /etc/grub.d
 cat /etc/gdm3/greeter.dconf-defaults | grep disable-user-list', 'true'
 'cat /etc/host.conf | grep nospoof', 'on'
