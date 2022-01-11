@@ -10,6 +10,9 @@ lsusb, lspci : look for bad devices.
 fdisk -l <device name> to list info about a partition
 ls /dev/sd* and check for bad devices?
 
+umount to unmount something
+check /media and /mnt
+
 https://github.com/Ryan-Galligher/CyberPatriot/blob/master/CyberPatriotScript
 REALLY GOOD SCRIPT TAKE SOME PARTS FROM HERE^
 
