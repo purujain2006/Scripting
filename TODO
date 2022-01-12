@@ -16,6 +16,10 @@ check /media and /mnt
 https://github.com/Ryan-Galligher/CyberPatriot/blob/master/CyberPatriotScript
 REALLY GOOD SCRIPT TAKE SOME PARTS FROM HERE^
 
+check /proc/cmdline to check for commands run when system was first booted
+check /proc/meminfo to check for excess use of memory by a process maybe?
+DEFINITELY CHECK --> /proc/modules: modules loaded in the kernel to add extra functionality (might be really harmful if theres a shell or something)
+
 find "$DIRECTORY" -perm /u=s,g=s
 
 chmod 777 /etc/grub.d
