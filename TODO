@@ -5,6 +5,7 @@ make sudoers.d empty?
 require root password for recovery mode?
 https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
+use "pstree" to see parent processes and child processes, make it easier to catch something malicious
 
 lsusb, lspci : look for bad devices.
 fdisk -l <device name> to list info about a partition
