@@ -10,7 +10,7 @@ use "pstree" to see parent processes and child processes, make it easier to catc
 Use top to check for cpu and ram intensive processes and terminate them (press K in top and follow prompts)
 For checking RAM usage, use free -g -s 4
 
-Check /var/tmp for dangerous files, reboot to delete if you need to.
+Check /var/tmp and /tmp for dangerous files, reboot to delete if you need to.
 
 lsusb, lspci : look for bad devices.
 fdisk -l <device name> to list info about a partition
