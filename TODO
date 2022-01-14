@@ -7,6 +7,8 @@ https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
 use "pstree" to see parent processes and child processes, make it easier to catch something malicious
 
+Use top to check for cpu and ram intensive processes and terminate them (press K in top and follow prompts)
+
 lsusb, lspci : look for bad devices.
 fdisk -l <device name> to list info about a partition
 ls /dev/sd* and check for bad devices?
