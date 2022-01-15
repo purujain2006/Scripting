@@ -10,7 +10,9 @@ If a user has a groupid of a certain group, they have special permissions over a
 --> CHOWN IMPORTANT FILES AS ROOT (check files for bad owners?)
 
 use "pstree" to see parent processes and child processes, make it easier to catch something malicious
-
+make sure system accounts ( not users ) have an * as their passwd
+use `w` for forensics and check which users are currently logged in
+USE SLAY FOR USERS
 use `id` to list all groups and uids DEF CHECK THIS OUT?
 
 Use top to check for cpu and ram intensive processes and terminate them (press K in top and follow prompts)
