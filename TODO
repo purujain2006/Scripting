@@ -5,6 +5,10 @@ make sudoers.d empty?
 require root password for recovery mode?
 https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
+If a user has a groupid of a certain group, they have special permissions over any filesused by that group
+
+--> CHOWN IMPORTANT FILES AS ROOT (check files for bad owners?)
+
 use "pstree" to see parent processes and child processes, make it easier to catch something malicious
 
 use `id` to list all groups and uids DEF CHECK THIS OUT?
