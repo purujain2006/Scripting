@@ -7,6 +7,8 @@ https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
 use "pstree" to see parent processes and child processes, make it easier to catch something malicious
 
+use `id` to list all groups and uids DEF CHECK THIS OUT?
+
 Use top to check for cpu and ram intensive processes and terminate them (press K in top and follow prompts)
 For checking RAM usage, use free -g -s 4
 
