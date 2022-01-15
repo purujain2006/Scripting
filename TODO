@@ -32,6 +32,10 @@ DEFINITELY CHECK --> /proc/modules: modules loaded in the kernel to add extra fu
 
 find "$DIRECTORY" -perm /u=s,g=s
 
+Run ifconfig eth0 up
+Make sure 'route' command sends packets to the router?
+
+
 chmod 777 /etc/grub.d
 cat /etc/gdm3/greeter.dconf-defaults | grep disable-user-list', 'true'
 'cat /etc/host.conf | grep nospoof', 'on'
@@ -113,6 +117,8 @@ Manually configure samba.conf bc script isnt ready yet
 CHECK FOR BAD PDFS BUT DONT DELETE USING THE SCRIPT?
 
 debsums -c for poisoned binary
+
+Check netstat -i for high TX-ERR,fix if possible
 
 check /etc/skel and remove all the files from all users if present
 
