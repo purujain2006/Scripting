@@ -18,6 +18,7 @@ ls /dev/sd* and check for bad devices?
 
 umount to unmount something
 check /media and /mnt
+Check ~/.ssh/known_hosts for weird hosts
 
 ps -u (user) to list out all processes for a singular user
 ps -aux --forest does ps -aux and lists the output as a tree of pparent and child processes
