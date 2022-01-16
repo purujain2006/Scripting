@@ -27,6 +27,14 @@ function dblue(){
 }
 #------------------------------------------------------------------------------------------
 
+#LEGAL NOTICE
+#------------------------------------------------------------------------------------------
+space
+echo "Script made by Puru Jain for CyberPatriot. If this script is found, it is not to be used for anyone's use in the CyberPatriot competitions"
+space
+#------------------------------------------------------------------------------------------
+
+
 #Get rid of all aliases + update sources
 #------------------------------------------------------------------------------------------
 alias
@@ -36,29 +44,14 @@ red "Change any unwanted alias by manual inspection, use unalias (aliasname) to 
 read alias
 space
 red "Check for poisoned files by using debsums -c and fix it (research/replace it with correct file)"
-#------------------------------------------------------------------------------------------
-
-
-#Check if script is being run as root
-#------------------------------------------------------------------------------------------
-#if [ "$EUID" -ne 0 ] ;
-#	then echo "Run as Root"
-#	exit
-#fi
-#------------------------------------------------------------------------------------------
-
-
-#LEGAL NOTICE
-#------------------------------------------------------------------------------------------
-space
-echo "Script made by Puru Jain for CyberPatriot. If this script is found, it is not to be used for anyone's use in the CyberPatriot competitions"
-space
-yellow "Current working directory is" ; pwd
-space
+read ao
 #------------------------------------------------------------------------------------------
 
 #prompts user for current user
 #------------------------------------------------------------------------------------------
+space
+yellow "Current working directory is" ; pwd
+space
 blue "What is the name of the user you are currently using?"
 read CUSER
 #------------------------------------------------------------------------------------------
