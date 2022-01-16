@@ -7,7 +7,8 @@ https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
 If a user has a groupid of a certain group, they have special permissions over any filesused by that group
 
---> CHOWN IMPORTANT FILES AS ROOT (check files for bad owners?)
+--> CHOWN IMPORTANT FILES AS ROOT? (check files for bad owners?)
+--> CHGRP IMPORTANT FILES AS ROOT? (check files for bad group owners)
 
 use "pstree" to see parent processes and child processes, make it easier to catch something malicious
 make sure system accounts ( not users ) have an * as their passwd
