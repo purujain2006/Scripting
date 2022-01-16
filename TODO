@@ -5,6 +5,10 @@ make sudoers.d empty?
 require root password for recovery mode?
 https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
+set /var/tmp and /tmp directories with the permissions: 1777
+--> chmod 1777 /tmp
+--> chmod 1777 /var/tmp
+
 If a user has a groupid of a certain group, they have special permissions over any filesused by that group
 
 --> CHOWN IMPORTANT FILES AS ROOT? (check files for bad owners?)
