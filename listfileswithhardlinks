@@ -1,3 +1,10 @@
 ls -laR | grep ^- | awk -F ' ' '$2 > 1' | grep ^- > /tmp/ha.txt
 clear
 cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}'
+
+##############################################################################################
+for symlinks:
+ls -laR | grep -w "\->" | awk -F " " '{print $(NF-2)}'
+or
+ls -laR | grep -w "\->" | awk -F " " '{print $NF}'
+
