@@ -414,44 +414,67 @@ sudo apt install linux-generic -y
 #------------------------------------------------------------------------------------------
 printf "\033[1;31mDeleting dangerous files...\033[0m\n"
 	#--------- Delete Dangerous Files ----------------
-	cd /
-	find / -name '*.mp3' -type f -delete > /dev/null 2>&1
-  echo "Done deleting mp3 files"
-	find / -name '*.mov' -type f -delete > /dev/null 2>&1
-  echo "Done deleting mov files"
-	find / -name '*.mp4' -type f -delete > /dev/null 2>&1
-  echo "Done deleting mp4 files"
-	find / -name '*.avi' -type f -delete > /dev/null 2>&1
-  echo "Done deleting avi files"
-	find / -name '*.mpg' -type f -delete > /dev/null 2>&1
-  echo "Done deleting mpg files"
-	find / -name '*.mpeg' -type f -delete > /dev/null 2>&1
-  echo "Done deleting mpeg files"
-	find / -name '*.flac' -type f -delete > /dev/null 2>&1
-  echo "Done deleting flac files"
-	find / -name '*.m4a' -type f -delete > /dev/null 2>&1
-  echo "Done deleting m4a files"
-	find / -name '*.flv' -type f -delete > /dev/null 2>&1
-  echo "Done deleting flv files"
-	find / -name '*.ogg' -type f -delete > /dev/null 2>&1
-  echo "Done deleting ogg files"
-	find /home -name '*.gif' -type f -delete > /dev/null 2>&1
-  echo "Done deleting gif files"
-	find /home -name '*.png' -type f -delete > /dev/null 2>&1
-  echo "Done deleting png files"
-	find /home -name '*.jpg' -type f -delete > /dev/null 2>&1
-  echo "Done deleting jpg files"
-	find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
-  echo "Done deleting jpeg files"
-	cd / && ls -laR 2> dev/null | grep rwxrwxrwx | grep -v "lrwx" &> /tmp/777s
-	printf "\033[1;31m777 (Full Permission) Files : \033[0m\n"
-	printf "\033[1;31mConsider changing the permissions of these files\033[0m\n"
-  echo " " | cat /tmp/777s
-  space
-  space
+cd /
+find / -name '*.mp3' -type f -delete > /dev/null 2>&1
+echo "Done deleting mp3 files"
+find / -name '*.mov' -type f -delete > /dev/null 2>&1
+echo "Done deleting mov files"
+find / -name '*.mp4' -type f -delete > /dev/null 2>&1
+echo "Done deleting mp4 files"
+find / -name '*.avi' -type f -delete > /dev/null 2>&1
+echo "Done deleting avi files"
+find / -name '*.mpg' -type f -delete > /dev/null 2>&1
+echo "Done deleting mpg files"
+find / -name '*.mpeg' -type f -delete > /dev/null 2>&1
+echo "Done deleting mpeg files"
+find / -name '*.flac' -type f -delete > /dev/null 2>&1
+echo "Done deleting flac files"
+find / -name '*.m4a' -type f -delete > /dev/null 2>&1
+echo "Done deleting m4a files"
+find / -name '*.flv' -type f -delete > /dev/null 2>&1
+echo "Done deleting flv files"
+find / -name '*.ogg' -type f -delete > /dev/null 2>&1
+echo "Done deleting ogg files"
+find /home -name '*.gif' -type f -delete > /dev/null 2>&1
+find /root -name '*.gif' -type f -delete > /dev/null 2>&1
+echo "Done deleting gif files"
+find /home -name '*.png' -type f -delete > /dev/null 2>&1
+find /root -name '*.png' -type f -delete > /dev/null 2>&1
+echo "Done deleting png files"
+find /home -name '*.jpg' -type f -delete > /dev/null 2>&1
+find /root -name '*.jpg' -type f -delete > /dev/null 2>&1
+echo "Done deleting jpg files"
+find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
+find /root -name '*.jpeg' -type f -delete > /dev/null 2>&1
+echo "Done deleting jpeg files"
+space
+red "Delete the Suspicious PDF files that shouldn't be there"
+space
+find /home -name '*.pdf' -type f
+find /root -name '*.pdf' -type f
+space
+echo "Press y when done"
+read y
+space
+space
+red "Delete the Suspicious txt files that shouldn't be there"
+space
+find /home -name '*.txt' -type f | grep -v firefox | grep -v .cache
+find /root -name '*.txt' -type f | grep -v firefox | grep -v .cache
+space
+echo "Press y when done"
+read y
+space
+space
+cd / && ls -laR 2> /dev/null | grep rwxrwxrwx | grep -v "lrwx" &> /tmp/777s
+printf "\033[1;31m777 (Full Permission) Files : \033[0m\n"
+printf "\033[1;31mConsider changing the permissions of these files\033[0m\n"
+echo " " | cat /tmp/777s
+space
+space
   
-  echo "After changing permissions, press any key"
-  read yea
+echo "After changing permissions, press any key"
+read yea
 #------------------------------------------------------------------------------------------
 
 #Configuring Configs
