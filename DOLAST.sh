@@ -32,6 +32,8 @@ space
 space
 red "Make sure to change all critical service configs to 600 (file perms)"
 space
+cd /etc; sudo chmod 644 -R /*/*.conf
+chmod 777 /etc/grub.d
 sudo chmod 644 /etc/passwd
 sudo chmod 600 /etc/shadow
 chmod 0600 /etc/securetty
