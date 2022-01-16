@@ -18,5 +18,32 @@ Put critical services in /home/$CUSER/Desktop/Scripting-main/Scripting-main/crit
           - ncftp
           - tnftp
           - tftp
-          
-      
+
+  Everything this Script does: 
+          - FormattingFunctions
+          - LegalBS
+          - AliasesAndPoisonedBinaries
+          - GetUsername
+          - UpdateSourcesAndInstallImportantPackages
+          - ChangeUserPasswords
+          - FixUserShells
+          - FixAdmins
+          - AddNewUsers
+          - ChangePasswordAge
+          - DeleteBadUsers
+          - ZeroUidUsers
+          - EnableFirewall
+          - ManualInstallCriticalServices
+          - RemoveKnownBadPackagesAndNoncriticalServices
+          - InstallAndUpdateImportantPackages
+          - ConfigsAndManualInspection
+          - ListAllBadPackagesAndManuallyDelete
+          - RestartServicesAndCheckForMaliciousOnes
+          - FstabStuff
+          - WeirdPermsEtcDirectory
+          - PlaintextPasswordFile
+          - #AntiVirus (Needs fixing)
+          - LockRootAccount
+          - ChmodConfigs
+          - FullUpdate
+          - IpTables
