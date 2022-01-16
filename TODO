@@ -5,6 +5,10 @@ make sudoers.d empty?
 require root password for recovery mode?
 https://www.acunetix.com/blog/web-security-zone/hardening-nginx/
 
+find a way to check for hard links? also symlinks/soft links
+--> for hard links maybe check if any files have the same inode number? Check out stack overflow later.
+--> https://www.lostsaloon.com/technology/how-to-find-all-hard-links-to-a-file-in-linux/ <-- CHECK OUT AND DEFINITELY SCRIPT BC THIS IS PAINFUL
+
 CHECK FOR "t" Stickybit in any directory
 --> ls -l | grep *******t kinda thing? or find the suid part of the script and do it
 
