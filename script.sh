@@ -497,7 +497,7 @@ sysctl -ep
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
-sudo cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$CUSER/.bashrc
+for i in `ls /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
 
