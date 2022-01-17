@@ -450,12 +450,10 @@ echo "Done deleting jpeg files"
 space
 red "Delete the Suspicious PDF files that shouldn't be there"
 space
-find /home -name '*.pdf' -type f
-find /root -name '*.pdf' -type f
+find /home -type f -name *.pdf
 space
 echo "Press y when done"
 read y
-space
 space
 red "Delete the Suspicious txt files that shouldn't be there"
 space
