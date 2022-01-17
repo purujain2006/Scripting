@@ -457,8 +457,10 @@ read y
 space
 red "Delete the Suspicious txt files that shouldn't be there"
 space
-find /home -name '*.txt' -type f | grep -v firefox | grep -v .cache
-find /root -name '*.txt' -type f | grep -v firefox | grep -v .cache
+find / -type f -name *.pdf | grep -v lib | grep -v usr | grep -v firefox | grep -v snap | grep -v Input
+space
+space
+red "Make sure that there aren't any weird sharing files in /usr/share"
 space
 echo "Press y when done"
 read y
