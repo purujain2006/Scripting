@@ -4,3 +4,4 @@ Made files: (still need to add to script)
   - greeter.dconf-defaults
   - custom.conf
   - logrotate.conf
+  - ufw.conf
