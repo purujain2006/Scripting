@@ -22,6 +22,7 @@ freshclam
 echo "running full scan of /home directory"
 clamscan -r /home #maybe include bin?
 
+
 #Permissions
 chown root:root /etc/securetty
 chmod 0600 /etc/securetty
