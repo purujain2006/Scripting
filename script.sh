@@ -228,6 +228,19 @@ printf "\033[1;31mChecking for 0 UID users...\033[0m\n"
 
 #------------------------------------------------------------------------------------------
 
+#manual passwd + group inspection
+
+space 
+echo "Press y to check /etc/passwd"
+read ha
+nano /etc/passwd
+space
+echo "Press y to check /etc/group"
+read h
+nano /etc/group
+space
+#------------------------------------------------------------------------------------------
+
 #unlock users
 #------------------------------------------------------------------------------------------
 for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do sudo usermod -U $i; sudo passwd -u $i; echo "Unlocked user " $i; done 
@@ -449,6 +462,10 @@ sudo apt-mark unhold firefox
 sudo apt install firefox -y
 sudo apt install nautilus -y
 sudo apt install linux-generic -y
+space
+red "Now go update firefox settings and then press y"
+space
+read as
 #------------------------------------------------------------------------------------------
 
 #Delete unwanted users
@@ -500,6 +517,14 @@ red "Delete the Suspicious txt files that shouldn't be there"
 space
 find / -type f -name *.pdf | grep -v lib | grep -v usr | grep -v firefox | grep -v snap | grep -v Input
 space
+red "Delete the Suspicious tar gz files that shouldn't be there"
+space
+find / -name '*.gz' -type f | grep -v snap
+space
+red "Delete the Suspicious zip files that shouldn't be there"
+space
+find / -name '*.zip' -type f | grep -v snap
+space
 space
 red "Make sure that there aren't any weird sharing files in /usr/share"
 space
@@ -518,9 +543,19 @@ echo "After changing permissions, press any key"
 read yea
 #------------------------------------------------------------------------------------------
 
+#manual
+#------------------------------------------------------------------------------------------
+space
+echo "GO RUN THROUGH EVERY USER'S DIRECTORY and then press y"
+space
+read x
+#------------------------------------------------------------------------------------------
+
 #Configuring Configs
 #------------------------------------------------------------------------------------------
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sudoers > /etc/sudoers
+
+nano /etc/sudoers
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/lightdm.conf > /etc/lightdm/lightdm.conf
 
@@ -528,48 +563,82 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/lightdm.conf > /u
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/login.defs > /etc/login.defs
 
+nano /etc/login.defs
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apache2.conf > /etc/apache2/apache2.conf
+
+nano /etc/apache2/apache2.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/rc.local > /etc/rc.local
 
+nano /etc/rc.local
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /etc/sysctl.conf
+
+nano /etc/sysctl.conf
 
 sysctl -ep
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/hosts > /etc/hosts
 
+nano /etc/hosts
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/ufw.conf > /etc/ufw.conf
+
+nano /etc/ufw.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > /etc/logrotate.conf
 
+nano /etc/logrotate.conf
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm3/custom.conf
 
+nano /etc/gdm3/custom.conf
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/greeter.dconf-defaults > /etc/gdm3/greeter.dconf-defaults
+
+nano /etc/gdm3/greeter.dconf-defaults
 
 rm -rf /etc/sysctl.d; cp -r /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.d /etc
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
+nano /etc/host.conf
+
 for i in `ls /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
+
+nano /etc/mysql/my.cnf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/users.conf > /etc/lightdm/users.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/adduser.conf > /etc/adduser.conf
 
+nano /etc/adduser.conf
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/deluser.conf > /etc/deluser.conf
+
+nano /etc/deluser.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sshd_config > /etc/ssh/sshd_config
 
+nano /etc/ssh/sshd_config
+
+space
 red " For PHP, type the version down below. i.e. '7.2' "
 read VERSION
+space
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/php.ini > /etc/php/$VERSION/apache2/php.ini
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/vsftpd.conf > /etc/vsftpd.conf
 
+nano /etc/vsftpd.conf
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/smb.conf > /etc/samba/smb.conf
+
+nano /etc/samba/smb.conf
 
 rm -rf /etc/sudoers.d
 
@@ -668,7 +737,7 @@ cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSE
 cat /home/$CUSER/Desktop/finallist
 
 space
-yellow "Type yes once you are done with packages"
+yellow "Type yes once you are done with MANUALLY INSPECTING packages"
 space
 read e
 
@@ -715,6 +784,10 @@ space
 echo "Press enter when you're ready to enter manual inspection"
 space
 read k
+sudo service --status-all
+space
+echo "when ready to proceed, press y"
+read s
 #------------------------------------------------------------------------------------------
 
 #resolv.conf
