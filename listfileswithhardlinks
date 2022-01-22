@@ -3,8 +3,4 @@ clear
 cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}'
 
 ##############################################################################################
-for symlinks:
-ls -laR | grep -w "\->" | awk -F " " '{print $(NF-2)}'
-or
-ls -laR | grep -w "\->" | awk -F " " '{print $NF}'
-
+cd /;ls -laR | grep -w /bin | grep -w '\->' | grep -v systemctl | grep -v kmod | grep -vF "ld." | grep -v less | grep -v touch | grep -v which | grep -vw ip | grep -w '\->' > /tmp/sym; clear; cat /tmp/sym
