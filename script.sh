@@ -621,6 +621,7 @@ read e
 
 #------------------------------------------------------------------------------------------
 
+
 #Services
 #------------------------------------------------------------------------------------------
 sudo service ssh restart
@@ -633,12 +634,17 @@ sudo service proftpd restart
 sudo service ncftp restart
 sudo service tnftp restart
 sudo service tftp restart
-
+space
 printf "\033[1;31mCheck for suspicious services and disable them: \033[0m\n"
 space
-service --status-all
+echo "Possibly Malicious Services"
+echo "########################"
 space
-echo "type something"
+red `service --status-all | awk -F " " '{print $NF}' > /tmp/currentservices.txt; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/allservices.txt /tmp/currentservices.txt > /tmp/differentServices; cat /tmp/differentServices`
+space
+echo "########################"
+space
+echo "Press enter when you're ready to enter manual inspection"
 space
 read k
 #------------------------------------------------------------------------------------------
