@@ -795,17 +795,17 @@ read s
 space
 echo "Bad Binaries"
 space
-echo" ###################################################"
+echo "###################################################"
 space
 cd /bin; ls > /tmp/binaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safebinfiles.txt /tmp/binaries
 space
-echo" ###################################################"
+echo "###################################################"
 space
 
 space
 echo "Bad SudoBinaries"
 space
-echo" ###################################################"
+echo "###################################################"
 space
 cd /sbin; ls > /tmp/sudobinaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safesbin.txt /tmp/sudobinaries
 space
