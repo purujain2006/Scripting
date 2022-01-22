@@ -75,6 +75,26 @@ sudo apt install  ufw
 space
 #------------------------------------------------------------------------------------------
 
+#Clamav Full Scan
+#------------------------------------------------------------------------------------------
+sudo apt install clamav
+#ClamAV
+printf "\033[1;31mStarting CLAMAV scan...\033[0m\n"
+systemctl stop clamav-freshclam
+freshclam --stdout
+systemctl start clamav-freshclam
+mkdir /home/$CUSER/Desktop/malware
+echo "Put this in another terminal:"
+space
+echo "clamscan --move=/home/osboxes/Desktop/malware --alert-encrypted=yes --scan-archive=yes --scan-html=yes --scan-elf=yes --scan-pdf=yes --follow-file-symlinks=0 --follow-dir-symlinks=0 --exclude-dir=sys --exclude-dir=snap --exclude-dir=/usr/lib --exclude-dir=proc -ro /"
+space
+space
+red "Press enter when you're done pasting that in. "
+space
+read y
+#------------------------------------------------------------------------------------------
+
+
 #Changing Passwords by asking user to place users in passwords.txt
 #------------------------------------------------------------------------------------------
 space
@@ -743,11 +763,9 @@ read asd
 printf "\033[1;31mScanning for Viruses...\033[0m\n"
 
 
-apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles
+sudo apt-get install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
 
 #This will download lynis 2.4.0, which may be out of date
-wget https://cisofy.com/files/lynis-2.5.5.tar.gz -O /lynis.tar.gz
-tar -xzf /lynis.tar.gz --directory /usr/share/
 
 #chkrootkit
 printf "\033[1;31mStarting CHKROOTKIT scan...\033[0m\n"
@@ -769,20 +787,8 @@ read y
 
 #Lynis
 printf "\033[1;31mStarting LYNIS scan...\033[0m\n"
-cd /usr/share/lynis/
-/usr/share/lynis/lynis update info
-/usr/share/lynis/lynis audit system
-space
-red "Ready for the next scan?"
-space
-read y
-
-#ClamAV
-printf "\033[1;31mStarting CLAMAV scan...\033[0m\n"
-systemctl stop clamav-freshclam
-freshclam --stdout
-systemctl start clamav-freshclam
-clamscan -r -i --stdout --exclude-dir="^/sys" /
+lynis update info
+lynis audit system
 space
 red "Ready for the next scan?"
 space
