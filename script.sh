@@ -731,9 +731,9 @@ space
 
 #/etc/fstab stuff
 #-----------------------------------------------------------------------------
-echo "tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
+echo 'tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
 tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
-tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0" >> /etc/fstab
+tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0' >> /etc/fstab
 space
 printf "\033[31mPut the following into /etc/fstab for the disk partition:\033[0m \n\ndefaults,nodev,noexec,nosuid"
 space
@@ -756,7 +756,14 @@ read y
 #-----------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
+space
+red "Delete suspicious suid bit files"
+space
 find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -l {} \; | awk -F " " '{print $NF}' > /tmp/suidbits; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/oksuid /tmp/suidbits
+space
+space
+echo "Done?"
+read asdasd
 #-----------------------------------------------------------------------------
 
 #plaintext password file
