@@ -219,11 +219,32 @@ for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt` ; do
 #------------------------------------------------------------------------------------------
 sudo ufw reset
 sudo ufw enable
-#------------------------------------------------------------------------------------------
+#enable fire-wall outgoing + incoming connections
+space
 
-#------------------------------------------------------------------------------------------
-#find /etc/apt -type f -name '*.list' -exec sed -i 's/^#\(deb.*-backports.*\)/\1/; s/^#\(deb.*-updates.*\)/\1/; s/^#\(deb.*-proposed.*\)/\1/; s/^#\(deb.*-security.*\)/\1/' {} +
-#https://askubuntu.com/questions/1093450/how-to-enable-or-disable-updates-security-backports-proposed-repositories
+echo "Allow outgoing connections? (y/n)"
+read outConn
+if [ $outConn = "n" ]
+then
+	sudo ufw default deny outgoing
+else
+	sudo ufw default allow outgoing
+fi
+
+echo "Allow incoming connections? (y/n)"
+read inConn
+if [ $inConn = "y" ]
+then
+	sudo ufw default allow incoming
+else
+	sudo ufw default deny incoming
+fi
+
+space
+space
+
+red "MAKE SURE YOU OPEN PORTS FOR CRITICAL SERVICES!!!!!! For example do: sudo ufw allow 22 for SSH"
+space
 #------------------------------------------------------------------------------------------
 
 #installs critical stuff
