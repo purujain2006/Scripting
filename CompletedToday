@@ -6,4 +6,5 @@ Made files: (still need to add to script)
   - logrotate.conf
   - ufw.conf
   - /etc/hosts
-  - resolv.conf
+
+Manual /etc/resolv.conf inspection
