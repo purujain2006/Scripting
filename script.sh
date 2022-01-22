@@ -672,6 +672,8 @@ ls /var/www/html
 space
 space
 read easd
+space
+space
 #-----------------------------------------------------------------------------
 
 #/etc/fstab stuff
