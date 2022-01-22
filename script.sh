@@ -790,6 +790,33 @@ echo "when ready to proceed, press y"
 read s
 #------------------------------------------------------------------------------------------
 
+#Binary Files
+#------------------------------------------------------------------------------------------
+space
+echo "Bad Binaries"
+space
+echo" ###################################################"
+space
+cd /bin; ls > /tmp/binaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safebinfiles.txt /tmp/binaries
+space
+echo" ###################################################"
+space
+
+space
+echo "Bad SudoBinaries"
+space
+echo" ###################################################"
+space
+cd /sbin; ls > /tmp/sudobinaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safesbin.txt /tmp/sudobinaries
+space
+echo "###################################################"
+space
+
+red "Figure out whats going on what the above files, fix accordingly + manually look at /bin + /sbin with hidden files listed. Then press y"
+space
+read y
+#------------------------------------------------------------------------------------------
+
 #resolv.conf
 #------------------------------------------------------------------------------------------
 space
