@@ -649,6 +649,21 @@ space
 read k
 #------------------------------------------------------------------------------------------
 
+#resolv.conf
+#------------------------------------------------------------------------------------------
+space
+red "Check /etc/resolv.conf for anything that doesn't look like the following and press enter when you're ready to continue: "
+space
+echo 'nameserver 127.0.0.53
+options edns0 trust-ad
+search localdomain'
+space
+read sd
+nano /etc/resolv.conf
+space
+space
+#------------------------------------------------------------------------------------------
+
 #/etc/fstab stuff
 #-----------------------------------------------------------------------------
 echo "tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
