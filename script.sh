@@ -674,6 +674,21 @@ read e
 
 #------------------------------------------------------------------------------------------
 
+#symlinks
+
+#------------------------------------------------------------------------------------------
+
+space
+echo "Look at all the symlinks"
+space
+cd /; ls -laR | grep ^- | awk -F ' ' '$2 > 1' | grep ^- > /tmp/ha.txt;clear; cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}' > /tmp/heh.txt; for i in ` grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safehlinks.txt /tmp/heh.txt`; do find | grep -w $i > /tmp/listofhardlinks; done; cat /tmp/listofhardlinks
+cd /;ls -laR | grep -w /bin | grep -w '\->' | grep -v systemctl | grep -v kmod | grep -vF "ld." | grep -v less | grep -v touch | grep -v which | grep -vw ip | grep -w '\->' > /tmp/sym; clear; cat /tmp/sym
+space
+echo "Press enter when you're done checking out the symlinks"
+space
+
+#------------------------------------------------------------------------------------------
+
 
 #Services
 #------------------------------------------------------------------------------------------
