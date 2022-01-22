@@ -775,6 +775,11 @@ red "Press y when ready"
 space
 read y
 nano /etc/fstab
+space
+space
+red "Now go check your partition notes (grubmkpasswd) and press enter when done"
+space
+read y
 #-----------------------------------------------------------------------------
 
 #/etc sus file permissions
