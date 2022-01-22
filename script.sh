@@ -664,6 +664,16 @@ space
 space
 #------------------------------------------------------------------------------------------
 
+#/var/www/html inspection
+#-----------------------------------------------------------------------------
+red "Check /var/www/html for suspicious files and press enter when finished"
+space
+ls /var/www/html
+space
+space
+read easd
+#-----------------------------------------------------------------------------
+
 #/etc/fstab stuff
 #-----------------------------------------------------------------------------
 echo "tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
