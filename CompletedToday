@@ -5,3 +5,4 @@ Made files: (still need to add to script)
   - custom.conf
   - logrotate.conf
   - ufw.conf
+  - /etc/hosts
