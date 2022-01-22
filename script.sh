@@ -86,7 +86,7 @@ systemctl start clamav-freshclam
 mkdir /home/$CUSER/Desktop/malware
 echo "Put this in another terminal:"
 space
-echo "clamscan --move=/home/osboxes/Desktop/malware --alert-encrypted=yes --scan-archive=yes --scan-html=yes --scan-elf=yes --scan-pdf=yes --follow-file-symlinks=0 --follow-dir-symlinks=0 --exclude-dir=sys --exclude-dir=snap --exclude-dir=/usr/lib --exclude-dir=proc -ro /"
+echo "clamscan --move=/home/$CUSER/Desktop/malware --alert-encrypted=yes --scan-archive=yes --scan-html=yes --scan-elf=yes --scan-pdf=yes --follow-file-symlinks=0 --follow-dir-symlinks=0 --exclude-dir=sys --exclude-dir=snap --exclude-dir=/usr/lib --exclude-dir=proc -ro /"
 space
 space
 red "Press enter when you're done pasting that in. "
