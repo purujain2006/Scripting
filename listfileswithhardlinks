@@ -1,6 +1,6 @@
-ls -laR | grep ^- | awk -F ' ' '$2 > 1' | grep ^- > /tmp/ha.txt
-clear
-cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}'
+
+ls -laR | grep ^- | awk -F ' ' '$2 > 1' | grep ^- > /tmp/ha.txt;clear; cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}' > /tmp/bruh.txt; grep -Fxvf safehardlinks.txt /tmp/bruh.txt
+
 
 ##############################################################################################
 cd /;ls -laR | grep -w /bin | grep -w '\->' | grep -v systemctl | grep -v kmod | grep -vF "ld." | grep -v less | grep -v touch | grep -v which | grep -vw ip | grep -w '\->' > /tmp/sym; clear; cat /tmp/sym
