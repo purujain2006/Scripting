@@ -536,6 +536,18 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /et
 
 sysctl -ep
 
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/hosts > /etc/hosts
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/ufw.conf > /etc/ufw.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > /etc/logrotate.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm3/custom.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/greeter.dconf-defaults > /etc/gdm3/greeter.dconf-defaults
+
+rm -rf /etc/sysctl.d; cp -r /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.d /etc
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
 for i in `ls /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
