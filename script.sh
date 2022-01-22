@@ -519,7 +519,7 @@ find / -type f -name *.pdf | grep -v lib | grep -v usr | grep -v firefox | grep 
 space
 red "Delete the Suspicious tar gz files that shouldn't be there"
 space
-find / -name '*.gz' -type f | grep -v snap
+find / -name '*.gz' -type f | grep -v snap | grep -v /usr/share | grep -v /var/lib
 space
 red "Delete the Suspicious zip files that shouldn't be there"
 space
