@@ -1,5 +1,7 @@
 gui settings power, suspend after like 10 minutes of inactivity
 
+whereis = cracked way to find files
+
 Check /etc/pam.d/su
 	Uncomment “auth required pam_wheel.so deny group = nosu” 
 
