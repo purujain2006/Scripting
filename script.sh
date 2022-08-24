@@ -501,6 +501,7 @@ find /root -name '*.png' -type f -delete > /dev/null 2>&1
 echo "Done deleting png files"
 find /home -name '*.jpg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpg' -type f -delete > /dev/null 2>&1
+find /usr/share -name '*.jpg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpg files"
 find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpeg' -type f -delete > /dev/null 2>&1
@@ -526,7 +527,7 @@ space
 find / -name '*.zip' -type f | grep -v snap
 space
 space
-red "Make sure that there aren't any weird sharing files in /usr/share"
+red "Make sure that there aren't any weird, OR bad files (jpg, mp3, etc.) in /usr/share"
 space
 echo "Press y when done"
 read y
