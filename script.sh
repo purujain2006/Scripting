@@ -996,6 +996,21 @@ read y
 
 #-------------------------------------------------------------------------
 
+#----------------
+space
+sudo ufw enable
+space
+red "MAKE SURE YOU OPEN CRITICAL SERVICE PORTS FOR FIREWALL (open 22 for ssh (make sure if you made it 100, make it 100))"
+space
+space
+space
+red "nmap ALL ports not just the usual 1000, ALL 65535. MAKE SURE THE CORRECT SERVICES ARE RUNNING ON THOSE PORTS AND ITS NOT JUST A SCAM. press y to continue"
+space
+space
+space
+read y
+
+#----------------
 
 #Locks Root
 #------------------------------------------------------------------------------------------
