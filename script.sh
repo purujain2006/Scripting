@@ -231,6 +231,8 @@ printf "\033[1;31mChecking for 0 UID users...\033[0m\n"
 #manual passwd + group inspection
 
 space 
+red "MAKE SURE TO CHECK FOR HIDDEN USERS - COMPARE COMPARE COMPAREEEEEEE (urgot was a hidden user), y to continue"
+read a
 echo "Press y to check /etc/passwd"
 read ha
 nano /etc/passwd
