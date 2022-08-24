@@ -71,7 +71,7 @@ read ANSWER
 sudo apt update
 sudo apt install unattended-upgrades
 sudo apt install apt
-sudo apt install  ufw
+sudo apt install ufw
 space
 #------------------------------------------------------------------------------------------
 
@@ -94,6 +94,19 @@ space
 read y
 #------------------------------------------------------------------------------------------
 
+#Add new users 
+#----------------------------------------------------------------------------------------
+space
+echo "Adding new users..."
+space
+
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do sudo useradd $i > /dev/null 2>&1 ; echo $i >> /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt; echo "Added new user " $i ; done
+
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do echo $i:"dq*eb5,69~n)_-JU<&V8" | sudo chpasswd ;  done
+
+echo "Done adding users "
+space
+#----------------------------------------------------------------------------------------
 
 #Changing Passwords by asking user to place users in passwords.txt
 #------------------------------------------------------------------------------------------
@@ -145,21 +158,6 @@ echo "Done changing admins "
 
 
 #------------------------------------------------------------------------------------------
-
-
-#Add new users 
-#----------------------------------------------------------------------------------------
-space
-echo "Adding new users..."
-space
-
-for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do sudo useradd $i > /dev/null 2>&1 ; echo $i >> /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt; echo "Added new user " $i ; done
-
-for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/newusers.txt` ; do echo $i:"dq*eb5,69~n)_-JU<&V8" | sudo chpasswd ;  done
-
-echo "Done adding users "
-space
-#----------------------------------------------------------------------------------------
 
 #chage stuff
 #----------------------------------------------------------------------------------------
@@ -497,9 +495,11 @@ find / -name '*.ogg' -type f -delete > /dev/null 2>&1
 echo "Done deleting ogg files"
 find /home -name '*.gif' -type f -delete > /dev/null 2>&1
 find /root -name '*.gif' -type f -delete > /dev/null 2>&1
+find /usr/share -name '*.gif' -type f -delete > /dev/null 2>&1
 echo "Done deleting gif files"
 find /home -name '*.png' -type f -delete > /dev/null 2>&1
 find /root -name '*.png' -type f -delete > /dev/null 2>&1
+find /usr/share -name '*.png' -type f -delete > /dev/null 2>&1
 echo "Done deleting png files"
 find /home -name '*.jpg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpg' -type f -delete > /dev/null 2>&1
@@ -507,6 +507,7 @@ find /usr/share -name '*.jpg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpg files"
 find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpeg' -type f -delete > /dev/null 2>&1
+find /usr/share -name '*.jpeg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpeg files"
 space
 red "Delete the Suspicious PDF files that shouldn't be there"
@@ -593,6 +594,35 @@ nano /etc/ufw.conf
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > /etc/logrotate.conf
 
 nano /etc/logrotate.conf
+
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chfn > /etc/chfn
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chpasswd > /etc/chpasswd
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chsh > /etc/chsh
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/common-account
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/common-auth
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/common-password
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-session > /etc/common-session
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-session-noninteractive > /etc/common-session-noninteractive
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/cron > /etc/cron
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/cups > /etc/cups
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-autologin > /etc/gdm-autologin
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-fingerprint > /etc/gdm-fingerprint
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-launch-environment > /etc/gdm-launch-environment
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-password > /etc/gdm-password
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/login > /etc/login
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/newusers > /etc/newusers
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/other > /etc/other
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/passwd > /etc/passwd
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/polkit-1 > /etc/polkit-1
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/ppp > /etc/ppp
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/runuser > /etc/runuser
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/runuser-l > /etc/runuser-l
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/samba > /etc/samba
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/su > /etc/su
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/su-l > /etc/su-l
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/sudo > /etc/sudo
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/systemd-user > /etc/systemd-user
+
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm3/custom.conf
 
@@ -859,7 +889,8 @@ for i in `ls /etc/cron.daily`; do if cat /etc/cron.daily/$i | grep -v '#' | grep
 for i in `ls /etc/cron.weekly`; do if cat /etc/cron.weekly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.weekly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.weekly/$i | grep -v '#' | grep '*'; echo " "; done
 for i in `ls /etc/cron.monthly`; do if cat /etc/cron.monthly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.monthly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.monthly/$i | grep -v '#' | grep '*'; echo " "; done
 space
-red "MANUALLY CHECK FOR BACKDOORS AND DONT FORGET TO KILL THEIR PID then press ok"
+red "MANUALLY CHECK FOR BACKDOORS ESPECIALLY IN HIDDEN FILES (.urgot) AND DONT FORGET TO KILL THEIR PID then press ok"
+red "/etc/cron.monthly, /etc/cron.weekly, /etc/cron.daily, /etc/cron.hourly, /etc/cron.d, /var/spool/cron/crontabs CHECK WITH ls -la (LOOK FOR .urgot TYPE OF FILES)"
 space
 read ok
 space
