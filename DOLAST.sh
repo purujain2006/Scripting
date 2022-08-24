@@ -212,3 +212,13 @@ apt-get install -y iptables
 	iptables -A OUTPUT -p udp --dport 53 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 	iptables -A OUTPUT -o lo -j ACCEPT
 	iptables -P OUTPUT DROP
+
+sudo ufw enable
+space
+red "MAKE SURE TO OPEN PORTS TO CRITICAL SERVICES (open port 22 for ssh (make sure its the port that YOU changed it to))"
+read apple
+space
+red "Done."
+sleep 10
+
+sleep 10
