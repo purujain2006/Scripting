@@ -882,12 +882,12 @@ space
 sudo apt install net-tools
 for i in `sudo netstat -tulpen | grep -v 631 | grep LISTEN | grep -v systemd-resolv | grep -v dnsmasq | grep -v ftp | grep -v ssh | grep -v apache2 | awk '{print $9F}' | awk '!a[$0]++' | cut -d "/" -f1`; do lsof 2>&1 | grep -w $i | grep -w txt | awk '{print $NF}'; done
 space
-for i in `ls /var/spool/cron/crontabs`; do if cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /var/spool/cron/crontabs/$i; echo " "; echo "#####################################"; echo " "; fi; cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls /etc/cron.d`; do if cat /etc/cron.d/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.d/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.d/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls /etc/cron.hourly`; do if cat /etc/cron.hourly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.hourly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.hourly/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls /etc/cron.daily`; do if cat /etc/cron.daily/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.daily/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.daily/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls /etc/cron.weekly`; do if cat /etc/cron.weekly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.weekly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.weekly/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls /etc/cron.monthly`; do if cat /etc/cron.monthly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.monthly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.monthly/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /var/spool/cron/crontabs | awk '{print $(NF)}'`; do if cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /var/spool/cron/crontabs/$i; echo " "; echo "#####################################"; echo " "; fi; cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /etc/cron.d | awk '{print $(NF)}'`; do if cat /etc/cron.d/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.d/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.d/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /etc/cron.hourly | awk '{print $(NF)}' `; do if cat /etc/cron.hourly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.hourly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.hourly/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /etc/cron.daily | awk '{print $(NF)}' `; do if cat /etc/cron.daily/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.daily/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.daily/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /etc/cron.weekly | awk '{print $(NF)}'`; do if cat /etc/cron.weekly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.weekly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.weekly/$i | grep -v '#' | grep '*'; echo " "; done
+for i in `ls -la /etc/cron.monthly | awk '{print $(NF)}'`; do if cat /etc/cron.monthly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.monthly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.monthly/$i | grep -v '#' | grep '*'; echo " "; done
 space
 red "MANUALLY CHECK FOR BACKDOORS ESPECIALLY IN HIDDEN FILES (.urgot) AND DONT FORGET TO KILL THEIR PID then press ok"
 red "/etc/cron.monthly, /etc/cron.weekly, /etc/cron.daily, /etc/cron.hourly, /etc/cron.d, /var/spool/cron/crontabs CHECK WITH ls -la (LOOK FOR .urgot TYPE OF FILES)"
@@ -951,6 +951,9 @@ read passwd
 space
 cd /home; grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' > /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt >> /home/$CUSER/Desktop/weirdfiles.txt ; cd /root;  grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt; cd /sbin; grep -rRwF --exclude /etc --exclude *.config "$passwd" | grep -v '\.' >> /home/$CUSER/Desktop/weirdfiles.txt; grep -rRwF --exclude /etc --exclude *.config "$passwd" |  grep txt >> /home/$CUSER/Desktop/weirdfiles.txt; cat /home/$CUSER/Desktop/weirdfiles.txt | cut -d: -f1
 space
+red "HOLD ON CHECKING /ETC. Press Y ONCE DONE CHECKING ABOVE"
+read asdss
+cd /etc; grep -rRwF "$passwd"
 space
 red "REMOVE ANY SUSPICIOUS FILES THAT CONTAIN THAT AND THEN PRESS Y"
 space
