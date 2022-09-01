@@ -595,33 +595,11 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > 
 
 nano /etc/logrotate.conf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chfn > /etc/chfn
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chpasswd > /etc/chpasswd
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chsh > /etc/chsh
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/common-account
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/common-auth
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/common-password
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-session > /etc/common-session
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-session-noninteractive > /etc/common-session-noninteractive
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/cron > /etc/cron
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/cups > /etc/cups
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-autologin > /etc/gdm-autologin
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-fingerprint > /etc/gdm-fingerprint
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-launch-environment > /etc/gdm-launch-environment
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/gdm-password > /etc/gdm-password
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/login > /etc/login
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/newusers > /etc/newusers
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/other > /etc/other
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/passwd > /etc/passwd
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/polkit-1 > /etc/polkit-1
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/ppp > /etc/ppp
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/runuser > /etc/runuser
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/runuser-l > /etc/runuser-l
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/samba > /etc/samba
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/su > /etc/su
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/su-l > /etc/su-l
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/sudo > /etc/sudo
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/systemd-user > /etc/systemd-user
+
 
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm3/custom.conf
