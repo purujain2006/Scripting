@@ -38,7 +38,8 @@ space
 #Get rid of all aliases + update sources
 #------------------------------------------------------------------------------------------
 alias
-
+space
+red "REMEMBER ATTRIBUTES SUCH AS IMMUTABLE EXIST"
 space
 red "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
 read alias
@@ -866,7 +867,7 @@ for i in `ls -la /etc/cron.daily | awk '{print $(NF)}' `; do if cat /etc/cron.da
 for i in `ls -la /etc/cron.weekly | awk '{print $(NF)}'`; do if cat /etc/cron.weekly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.weekly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.weekly/$i | grep -v '#' | grep '*'; echo " "; done
 for i in `ls -la /etc/cron.monthly | awk '{print $(NF)}'`; do if cat /etc/cron.monthly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.monthly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.monthly/$i | grep -v '#' | grep '*'; echo " "; done
 space
-red "MANUALLY CHECK FOR BACKDOORS ESPECIALLY IN HIDDEN FILES (.urgot) AND DONT FORGET TO KILL THEIR PID then press ok"
+red "MANUALLY CHECK FOR BACKDOORS ESPECIALLY IN HIDDEN FILES (.urgot) (Also check Attributes, immutable) AND DONT FORGET TO KILL THEIR PID then press ok"
 red "/etc/cron.monthly, /etc/cron.weekly, /etc/cron.daily, /etc/cron.hourly, /etc/cron.d, /var/spool/cron/crontabs CHECK WITH ls -la (LOOK FOR .urgot TYPE OF FILES)"
 space
 read ok
