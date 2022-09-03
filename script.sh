@@ -595,7 +595,6 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > 
 
 nano /etc/logrotate.conf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/chpasswd > /etc/chpasswd
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/common-account
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/common-auth
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/common-password
