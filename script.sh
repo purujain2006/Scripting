@@ -496,19 +496,15 @@ find / -name '*.ogg' -type f -delete > /dev/null 2>&1
 echo "Done deleting ogg files"
 find /home -name '*.gif' -type f -delete > /dev/null 2>&1
 find /root -name '*.gif' -type f -delete > /dev/null 2>&1
-find /usr/share -name '*.gif' -type f -delete > /dev/null 2>&1
 echo "Done deleting gif files"
 find /home -name '*.png' -type f -delete > /dev/null 2>&1
 find /root -name '*.png' -type f -delete > /dev/null 2>&1
-find /usr/share -name '*.png' -type f -delete > /dev/null 2>&1
 echo "Done deleting png files"
 find /home -name '*.jpg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpg' -type f -delete > /dev/null 2>&1
-find /usr/share -name '*.jpg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpg files"
 find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpeg' -type f -delete > /dev/null 2>&1
-find /usr/share -name '*.jpeg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpeg files"
 space
 red "Delete the Suspicious PDF files that shouldn't be there"
@@ -531,7 +527,7 @@ space
 find / -name '*.zip' -type f | grep -v snap
 space
 space
-red "Make sure that there aren't any weird, OR bad files (jpg, mp3, etc.) in /usr/share"
+red "Make sure that there aren't any weird, OR bad files (jpg, mp3, etc.) in /usr/share YOUR SCRIPT DOESNT DO THIS ANYMORE (REMOVED ALL ICONS SO YOU REMOVED IT)"
 space
 echo "Press y when done"
 read y
