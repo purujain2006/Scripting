@@ -48,18 +48,11 @@ chmod 750 /var/log/apache2/ >/dev/null 2>&1
 chmod 640 /etc/apache2/conf-available/* >/dev/null 2>&1
 chmod 640 /etc/apache2/conf-enabled/* >/dev/null 2>&1
 chmod 640 /etc/apache2/apache2.conf >/dev/null 2>&1
-chmod og-rwx /boot/grub/grub.cfg
-chmod -R g-wx,o-rwx /var/log/*
-chown root:root /etc/ssh/sshd_config
-chmod og-rwx /etc/ssh/sshd_config
 chown root:root /etc/passwd
 chmod 644 /etc/passwd
-chown root:shadow /etc/shadow
-chmod o-rwx,g-wx /etc/shadow
 chown root:root /etc/group
 chmod 644 /etc/group
 chown root:shadow /etc/gshadow
-chmod o-rwx,g-rw /etc/gshadow
 chown root:root /etc/passwd-
 chmod 600 /etc/passwd-
 chown root:root /etc/shadow-
