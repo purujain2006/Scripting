@@ -117,7 +117,8 @@ df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -typ
 
 
 
-sudo apt-get update && upgrade
+sudo apt-get update 
+sudo apt upgrade
 
 sudo ufw enable
 space
