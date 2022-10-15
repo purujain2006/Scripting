@@ -383,9 +383,7 @@ sudo apt-get --purge autoremove hitori -y > /dev/null 2>&1
 sudo apt-get --purge autoremove iagno -y > /dev/null 2>&1
 sudo apt-get --purge autoremove hoichess -y > /dev/null 2>&1
 sudo apt-get --purge autoremove lightsoff -y > /dev/null 2>&1
-sudo apt-get --purge autoremove quadrapassel -y > /dev/null 2>&1
 sudo apt-get --purge autoremove swell-foop -y > /dev/null 2>&1
-sudo apt-get --purge autoremove aircrack-ng -y > /dev/null 2>&1
 sudo apt-get --purge autoremove aisleriot -y > /dev/null 2>&1
 sudo apt-get --purge autoremove bind9 -y > /dev/null 2>&1
 sudo apt-get --purge autoremove bind9-host -y > /dev/null 2>&1
@@ -423,13 +421,7 @@ sudo apt-get --purge autoremove remmina-common -y > /dev/null 2>&1
 sudo apt-get --purge autoremove deluge -y > /dev/null 2>&1
 sudo apt-get --purge autoremove slapd -y > /dev/null 2>&1
 sudo apt-get --purge autoremove iodine -y > /dev/null 2>&1
-sudo apt-get --purge autoremove kismet -y > /dev/null 2>&1
-sudo apt-get --purge autoremove nikto -y > /dev/null 2>&1
-sudo apt-get --purge autoremove john -y > /dev/null 2>&1
-sudo apt-get --purge autoremove medusa -y > /dev/null 2>&1
-sudo apt-get --purge autoremove hydra -y > /dev/null 2>&1
 sudo apt-get --purge autoremove tightvncserver -y > /dev/null 2>&1
-sudo apt-get --purge autoremove fcrackzip -y > /dev/null 2>&1
 sudo apt-get --purge autoremove telnet -y > /dev/null 2>&1
 sudo apt-get --purge autoremove ayttm -y > /dev/null 2>&1
 sudo apt-get --purge autoremove empathy -y > /dev/null 2>&1
@@ -939,38 +931,42 @@ read asd
 #-----------------------------------------------------------------------------
 printf "\033[1;31mScanning for Viruses...\033[0m\n"
 
-
-sudo apt-get install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
-
-#This will download lynis 2.4.0, which may be out of date
-
-#chkrootkit
-printf "\033[1;31mStarting CHKROOTKIT scan...\033[0m\n"
-chkrootkit -q
+printf "\033[1;31mSay (y/n) depending on if you want to do this (say no for earlier rounds tbh)...\033[0m\n" 
 space
-red "Ready for the next scan?"
-space
-read y
+read $virus
 
-#Rkhunter
-printf "\033[1;31mStarting RKHUNTER scan...\033[0m\n"
-rkhunter --update
-rkhunter --propupd #Run this once at install
-rkhunter -c --enable all --disable none
-space
-red "Ready for the next scan?"
-space
-read y
+if [$virus == "y"]; then
+	sudo apt-get install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
 
-#Lynis
-printf "\033[1;31mStarting LYNIS scan...\033[0m\n"
-lynis update info
-lynis audit system
-space
-red "Ready for the next scan?"
-space
-read y
+	#This will download lynis 2.4.0, which may be out of date
 
+	#chkrootkit
+	printf "\033[1;31mStarting CHKROOTKIT scan...\033[0m\n"
+	chkrootkit -q
+	space
+	red "Ready for the next scan?"
+	space
+	read y
+
+	#Rkhunter
+	printf "\033[1;31mStarting RKHUNTER scan...\033[0m\n"
+	rkhunter --update
+	rkhunter --propupd #Run this once at install
+	rkhunter -c --enable all --disable none
+	space
+	red "Ready for the next scan?"
+	space
+	read y
+
+	#Lynis
+	printf "\033[1;31mStarting LYNIS scan...\033[0m\n"
+	lynis update info
+	lynis audit system
+	space
+	red "Ready for the next scan?"
+	space
+	read y
+fi
 #-------------------------------------------------------------------------
 
 #----------------
