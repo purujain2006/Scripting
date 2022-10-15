@@ -771,6 +771,9 @@ sudo service ncftp restart
 sudo service tnftp restart
 sudo service tftp restart
 space
+printf "\033[1;31mIF YOU HAVE A SERVICE THAT ISNT AUTHORIZED, YOU PROBABLY LOST POINTS BY RESTARTING, SO DISABLE STUFF LIKE APACHE, SSH, SAMBA, SMBD, SMTP, AND PROFTP TYPE STUFF (y to continue) \033[0m\n"
+read $f
+space
 printf "\033[1;31mCheck for suspicious services and disable them: \033[0m\n"
 space
 echo "Possibly Malicious Services"
