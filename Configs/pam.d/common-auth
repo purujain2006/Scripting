@@ -24,5 +24,7 @@
 auth	required			pam_permit.so
 # and here are more per-package modules (the "Additional" block)
 # end of pam-auth-update config
-auth [success=1 default=ignore] pam_unix.so nullok_secure
-auth required pam_tally2.so onerr=fail audit silent deny=5 unlock_time=900 even_deny_root_account silent
+auth optional pam_tally.so deny=5 unlock_time=900 onerr=fail
+audit even_deny_root_account silent
+
+
