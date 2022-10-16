@@ -88,13 +88,13 @@ chmod 440 /etc/xinted.conf
 chmod 400 /etc/inetd.d
 chmod 644 /etc/hosts.allow
 chmod 440 /etc/sudoers
-chmod 600 /etc/shadow
+chmod 644 /etc/shadow
 chown root:root /etc/shadow
 chmod 644 /etc/passwd
 chown root:root /etc/passwd
 chmod 644 /etc/group
 chown root:root /etc/group
-chmod 600 /etc/gshadow
+chmod 644 /etc/gshadow
 chown root:root /etc/gshadow
 chmod 700 /boot
 chown root:root /etc/anacrontab
