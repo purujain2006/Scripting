@@ -26,7 +26,6 @@ read CUSER
 
 sudo apt install libpam-cracklib
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/pam.d/common-account
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/pam.d/common-auth
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/pam.d/common-password
 
