@@ -869,7 +869,8 @@ printf "\033[1;31mSay (y/n) depending on if you want to do this (say no for earl
 space
 read $virus
 
-if [$virus == "y"]; then
+if [$virus == "y"]
+then
 	sudo apt-get install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
 
 	#This will download lynis 2.4.0, which may be out of date
