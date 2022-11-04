@@ -481,3 +481,75 @@ List and configure startup processes? sysv-rc-conf --list command
 check /etc/skel for weird files (might add malicious files to home directory of any new users created)
 
 bashrc
+
+
+
+sudo apt-get --purge autoremove four-in-a-row -y > /dev/null 2>&1
+sudo apt-get --purge autoremove freeciv -y > /dev/null 2>&1
+sudo apt-get --purge autoremove hitori -y > /dev/null 2>&1
+sudo apt-get --purge autoremove iagno -y > /dev/null 2>&1
+sudo apt-get --purge autoremove hoichess -y > /dev/null 2>&1
+sudo apt-get --purge autoremove lightsoff -y > /dev/null 2>&1
+sudo apt-get --purge autoremove swell-foop -y > /dev/null 2>&1
+sudo apt-get --purge autoremove aisleriot -y > /dev/null 2>&1
+sudo apt-get --purge autoremove bind9 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove bind9-host -y > /dev/null 2>&1
+sudo apt-get --purge autoremove zeya -y > /dev/null 2>&1
+sudo apt-get --purge autoremove yaws -y > /dev/null 2>&1
+sudo apt-get --purge autoremove thin -y > /dev/null 2>&1
+sudo apt-get --purge autoremove pdnsd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove dns2tcp -y > /dev/null 2>&1
+sudo apt-get --purge autoremove gdnsd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ldap2dns -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ophcrack -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nmap -y > /dev/null 2>&1
+sudo apt-get --purge autoremove netris -y > /dev/null 2>&1
+sudo apt-get --purge autoremove maradns -y > /dev/null 2>&1
+sudo apt-get --purge autoremove minetest -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nsd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nsd3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove zentyal-dns -y > /dev/null 2>&1
+sudo apt-get --purge autoremove mailutils-imap4d -y > /dev/null 2>&1
+sudo apt-get --purge autoremove dovecot-pop3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove dovecot-imapd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove cyrus-imapd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove cyrus-pop3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove sendmail -y > /dev/null 2>&1
+sudo apt-get --purge autoremove postfix -y > /dev/null 2>&1
+sudo apt-get --purge autoremove sqwebmail -y > /dev/null 2>&1
+sudo apt-get --purge autoremove armagetronad -y > /dev/null 2>&1
+sudo apt-get --purge autoremove snmpd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove postgresql -y > /dev/null 2>&1
+sudo apt-get --purge autoremove snmptt -y > /dev/null 2>&1
+sudo apt-get --purge autoremove snmptrapfmt -y > /dev/null 2>&1
+sudo apt-get --purge autoremove audacious -y > /dev/null 2>&1
+sudo apt-get --purge autoremove remmina -y > /dev/null 2>&1
+sudo apt-get --purge autoremove remmina-common -y > /dev/null 2>&1
+sudo apt-get --purge autoremove deluge -y > /dev/null 2>&1
+sudo apt-get --purge autoremove slapd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove iodine -y > /dev/null 2>&1
+sudo apt-get --purge autoremove tightvncserver -y > /dev/null 2>&1
+sudo apt-get --purge autoremove telnet -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ayttm -y > /dev/null 2>&1
+sudo apt-get --purge autoremove empathy -y > /dev/null 2>&1
+sudo apt-get --purge autoremove logkeys -y > /dev/null 2>&1
+sudo apt-get --purge autoremove p0f -y > /dev/null 2>&1
+sudo apt-get --purge autoremove openarena -y > /dev/null 2>&1
+sudo apt-get --purge autoremove netcat -y > /dev/null 2>&1
+sudo apt-get --purge autoremove netcat-openbsd -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ettercap -y > /dev/null 2>&1
+sudo apt-get --purge autoremove wireshark -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nginx -y > /dev/null 2>&1
+sudo apt-get --purge autoremove mongodb -y > /dev/null 2>&1
+sudo apt-get --purge autoremove mariadb -y > /dev/null 2>&1
+sudo apt-get --purge autoremove sqlite -y > /dev/null 2>&1
+sudo apt-get --purge autoremove citadel-server -y > /dev/null 2>&1
+sudo apt-get --purge autoremove nagios3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove squid3 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove znc -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-irc2 -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-ircu -y > /dev/null 2>&1
+sudo apt-get --purge autoremove ircd-hybrid -y > /dev/null 2>&1
+sudo apt-get --purge autoremove vino -y > /dev/null 2>&1
+sudo apt-get --purge autoremove Rdesktop -y > /dev/null 2>&1
+sudo apt-get --purge autoremove Vinagre -y > /dev/null 2>&1
