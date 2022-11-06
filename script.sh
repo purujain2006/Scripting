@@ -803,7 +803,7 @@ space
 
 #/etc/fstab stuff
 #-----------------------------------------------------------------------------
-echo 'tmpfs /run/shm tmpfs defaults,nodev,noexec,nosuid 0 0
+echo 'tmpfs /dev/shm tmpfs defaults,nodev,noexec,nosuid 0 0
 tmpfs /tmp tmpfs defaults,rw,nosuid,nodev,noexec,relatime 0 0
 tmpfs /var/tmp tmpfs defaults,nodev,noexec,nosuid 0 0' >> /etc/fstab
 space
