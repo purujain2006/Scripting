@@ -50,3 +50,5 @@ Put critical services in /home/$CUSER/Desktop/Scripting-main/Scripting-main/crit
           - IpTables
 
 Extract the zip file you downloaded to desktop,put another scripting main folder under scripting main, input user like "tanjiro" for prompt, follow readme instructions (input stuff on new line) 
+
+MAKE SURE YOU GENERATE SSH KEYS
