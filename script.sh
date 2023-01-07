@@ -399,6 +399,8 @@ printf "\033[1;31mDeleting dangerous files...\033[0m\n"
 cd /
 find / -name '*.mp3' -type f -delete > /dev/null 2>&1
 echo "Done deleting mp3 files"
+find / -name '*.tgz' -type f -delete > /dev/null 2>&1
+echo "Done deleting tgz files"
 find / -name '*.mov' -type f -delete > /dev/null 2>&1
 echo "Done deleting mov files"
 find / -name '*.mp4' -type f -delete > /dev/null 2>&1
@@ -430,7 +432,7 @@ find /home -name '*.jpeg' -type f -delete > /dev/null 2>&1
 find /root -name '*.jpeg' -type f -delete > /dev/null 2>&1
 echo "Done deleting jpeg files"
 space
-red "Delete the Suspicious PDF files that shouldn't be there"
+red "Delete the Suspicious PDF files that shouldn't be there AND check for other file types that are like tgz and stuff idk"
 space
 find /home -type f -name *.pdf
 space
