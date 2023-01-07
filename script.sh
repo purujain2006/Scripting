@@ -723,6 +723,33 @@ echo "when ready to proceed, press y"
 read s
 #------------------------------------------------------------------------------------------
 
+#------------------------------------------------------------------------------------------
+space
+yellow "SSH KeyGen"
+space
+sudo apt -y install expect
+cd /
+space
+mkdir /home/$CUSER/.ssh
+space
+expect -c "
+spawn ssh-keygen
+expect \"Enter file in which to save the key\"
+send \"/home/$CUSER/.ssh/id_rsa\r\"
+expect \"Enter passphrase\"
+send \"j@Hn\r\"
+expect \"Enter same passphrase again\"
+send \"j@Hn\r\"
+expect eof
+"
+space
+space
+
+chmod 600 /home/$CUSER/.ssh/id_rsa
+chmod 640 /home/$CUSER/.ssh/id_rsa.pub
+space
+#------------------------------------------------------------------------------------------
+
 #Binary Files
 #------------------------------------------------------------------------------------------
 space
