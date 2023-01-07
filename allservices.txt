@@ -25,7 +25,6 @@ plymouth-log
 pppd-dns
 procps
 pulseaudio-enable-autospawn
-rsync
 rsyslog
 saned
 speech-dispatcher
