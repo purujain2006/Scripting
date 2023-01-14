@@ -67,3 +67,26 @@ echo "--------------------------------------------"
   			# "remove any instances of \m, \r, \s, or \v." \
         
         sudo nano /etc/default/rsync
+
+#!/bin/bash
+
+# Define binary folders
+folders=(/bin /sbin /usr/sbin /usr/bin /var/sbin /var/bin)
+
+# Define default file list for Ubuntu 22.04
+default_files=$(dpkg -L ubuntu-minimal | grep -E "/(bin|sbin)/")
+
+# Iterate through binary folders
+for folder in "${folders[@]}"; do
+  # Check files in folder
+  for file in $(ls $folder); do
+    # Check file permissions
+    if [ $(stat -c "%a" "$folder/$file") -gt 755 ]; then
+      echo "$folder/$file has insecure permissions"
+    fi
+    # Check if file is in default installation
+    if ! echo "$default_files" | grep -q "$folder/$file"; then
+      echo "$folder/$file is not in default installation"
+    fi
+  done
+done
