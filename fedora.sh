@@ -868,7 +868,7 @@ read $virus
 
 if [$virus == "y"]
 then
-	sudo apt-get install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
+	sudo dnf install -y chkrootkit rkhunter apparmor apparmor-profiles lynis
 
 	#This will download lynis 2.4.0, which may be out of date
 
