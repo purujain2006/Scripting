@@ -24,11 +24,6 @@ function dblue(){
 echo "User?"
 read CUSER
 
-sudo apt install libpam-cracklib
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/pam.d/common-auth
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/pam.d/common-password
-
 space
 space
 red "Make sure to change all critical service configs to 600 (file perms)"
