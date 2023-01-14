@@ -537,7 +537,7 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/
 
 nano /etc/host.conf
 
-for i in `ls /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
+for i in `ls -a /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
 
@@ -759,7 +759,7 @@ echo "Bad Binaries"
 space
 echo "###################################################"
 space
-cd /bin; ls > /tmp/binaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safebinfiles.txt /tmp/binaries
+cd /bin; ls -a > /tmp/binaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safebinfiles.txt /tmp/binaries
 space
 echo "###################################################"
 space
@@ -769,7 +769,7 @@ echo "Bad SudoBinaries"
 space
 echo "###################################################"
 space
-cd /sbin; ls > /tmp/sudobinaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safesbin.txt /tmp/sudobinaries
+cd /sbin; ls -a > /tmp/sudobinaries; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safesbin.txt /tmp/sudobinaries
 space
 echo "###################################################"
 space
@@ -798,7 +798,7 @@ space
 #-----------------------------------------------------------------------------
 red "Check /var/www/html for suspicious files and press enter when finished"
 space
-ls /var/www/html
+ls -a /var/www/html
 space
 space
 read easd
@@ -865,7 +865,7 @@ read y
 space
 red "Delete suspicious suid bit files"
 space
-find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -l {} \; | awk -F " " '{print $NF}' > /tmp/suidbits; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/oksuid /tmp/suidbits
+find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -la {} \; | awk -F " " '{print $NF}' > /tmp/suidbits; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/oksuid /tmp/suidbits
 space
 space
 echo "Done?"
