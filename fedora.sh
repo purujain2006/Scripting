@@ -58,8 +58,13 @@ read CUSER
 
 #Updates
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/dnf/dnf.conf > /etc/dnf/dnf.conf
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/dnf/dnf.conf.save > /etc/dnf/dnf.conf.save
+dnf config-manager --set-disabled fedora-cisco-openh264
+dnf config-manager --set-disabled updates-testing-modular
+dnf config-manager --set-enabled fedora
+dnf config-manager --set-enabled updates
+dnf config-manager --set-enabled updates-testing
+dnf config-manager --set-enabled fedora-modular
+dnf config-manager --set-enabled updates-modular
 space
 red "Make sure your update settings are up to date"
 space
