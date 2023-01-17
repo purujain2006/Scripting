@@ -472,7 +472,7 @@ read x
 # Configuring Configs
 #------------------------------------------------------------------------------------------
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sudoers > /etc/sudoers
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/fsudoers > /etc/sudoers
 
 nano /etc/sudoers
 
