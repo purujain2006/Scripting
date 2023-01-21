@@ -113,7 +113,6 @@ df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -typ
 sudo dnf update 
 sudo dnf upgrade
 
-sudo ufw enable
 space
 red "MAKE SURE TO OPEN PORTS TO CRITICAL SERVICES (open port 22 for ssh (make sure its the port that YOU changed it to))"
 read apple
