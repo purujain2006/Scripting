@@ -455,7 +455,9 @@ space
 red "INSTALLING PAM RN SOOOOOOO PRAY IG? press y lol"
 space
 read hi
-sudo dnf install libpwquality
+sudo dnf install pam
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/system-auth > /etc/pam.d/system-auth
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/password-auth > /etc/pam.d/password-auth
 space
 #------------------------------------------------------------------------------------------
 
