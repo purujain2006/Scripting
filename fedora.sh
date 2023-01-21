@@ -258,27 +258,6 @@ sudo systemctl start firewalld
 sudo firewall-cmd --set-default-zone=public
 space
 
-echo "Allow outgoing connections? (y/n)"
-read outConn
-if [ $outConn = "n" ]
-then
-	sudo firewall-cmd --add-rich-rule='rule family="ipv4" drop out'
-else
-	sudo firewall-cmd --add-rich-rule='rule family="ipv4" accept out'
-fi
-
-echo "Allow incoming connections? (y/n)"
-read inConn
-if [ $inConn = "y" ]
-then
-	sudo firewall-cmd --add-rich-rule='rule family="ipv4" accept in'
-else
-	sudo firewall-cmd --add-rich-rule='rule family="ipv4" drop in'
-fi
-
-space
-space
-
 red "MAKE SURE YOU OPEN PORTS FOR CRITICALS!!!!!! For example do: sudo firewall-cmd --add-port=22/tcp for SSH"
 space
 #------------------------------------------------------------------------------------------
