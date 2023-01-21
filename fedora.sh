@@ -590,7 +590,7 @@ space
 
 #Services
 #------------------------------------------------------------------------------------------
-sudo systemctl restart ssh
+sudo systemctl restart sshd
 sudo systemctl restart httpd
 sudo systemctl restart mariadb
 sudo systemctl restart samba-client
