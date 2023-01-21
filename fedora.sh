@@ -279,7 +279,7 @@ fi
 space
 space
 
-red "MAKE SURE YOU OPEN PORTS FOR CRITICAL SERVICES!!!!!! For example do: sudo firewall-cmd --add-port=22/tcp for SSH"
+red "MAKE SURE YOU OPEN PORTS FOR CRITICALS!!!!!! For example do: sudo firewall-cmd --add-port=22/tcp for SSH"
 space
 #------------------------------------------------------------------------------------------
 
@@ -696,7 +696,7 @@ space
 echo "Possibly Malicious Services"
 echo "########################"
 space
-red `systemctl --all | awk -F " " '{print $1}' > /tmp/currentservices.txt; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/allservices.txt /tmp/currentservices.txt > /tmp/differentServices; cat /tmp/differentServices`
+red `systemctl list-units --type service --all --no-legend --plain --no-pager --quiet | cut -d " " -f1 > /tmp/currentservices.txt; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedoraservices.txt /tmp/currentservices.txt > /tmp/differentServices; cat /tmp/differentServices`
 space
 echo "########################"
 space
