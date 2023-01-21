@@ -525,16 +525,6 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/my.
 
 nano /etc/my.cnf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/users.conf > /etc/lightdm/users.conf
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/adduser.conf > /etc/adduser.conf
-
-nano /etc/adduser.conf
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/deluser.conf > /etc/deluser.conf
-
-nano /etc/deluser.conf
-
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sshd_config > /etc/ssh/sshd_config
 
 nano /etc/ssh/sshd_config
@@ -717,23 +707,20 @@ space
 sudo dnf install net-tools
 for i in `sudo netstat -tulpen | grep -v 631 | grep LISTEN | grep -v systemd-resolv | grep -v dnsmasq | grep -v ftp | grep -v ssh | grep -v apache2 | awk '{print $9F}' | awk '!a[$0]++' | cut -d "/" -f1`; do lsof 2>&1 | grep -w $i | grep -w txt | awk '{print $NF}'; done
 space
-for i in `ls -la /var/spool/cron/crontabs | awk '{print $(NF)}'`; do if cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /var/spool/cron/crontabs/$i; echo " "; echo "#####################################"; echo " "; fi; cat /var/spool/cron/crontabs/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls -la /etc/cron.d | awk '{print $(NF)}'`; do if cat /etc/cron.d/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.d/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.d/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls -la /etc/cron.hourly | awk '{print $(NF)}' `; do if cat /etc/cron.hourly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.hourly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.hourly/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls -la /etc/cron.daily | awk '{print $(NF)}' `; do if cat /etc/cron.daily/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.daily/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.daily/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls -la /etc/cron.weekly | awk '{print $(NF)}'`; do if cat /etc/cron.weekly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.weekly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.weekly/$i | grep -v '#' | grep '*'; echo " "; done
-for i in `ls -la /etc/cron.monthly | awk '{print $(NF)}'`; do if cat /etc/cron.monthly/$i | grep -v '#' | grep '*' > /dev/null ; then echo " "; echo "#####################################"; echo " ";echo /etc/cron.monthly/$i; echo " "; echo "#####################################"; echo " "; fi; cat /etc/cron.monthly/$i | grep -v '#' | grep '*'; echo " "; done
 space
-red "MANUALLY CHECK FOR BACKDOORS ESPECIALLY IN HIDDEN FILES (.urgot) (Also check Attributes, immutable) AND DONT FORGET TO KILL THEIR PID then press ok"
-red "/etc/cron.monthly, /etc/cron.weekly, /etc/cron.daily, /etc/cron.hourly, /etc/cron.d, /var/spool/cron/crontabs CHECK WITH ls -la (LOOK FOR .urgot TYPE OF FILES)"
+red "FEDORA DOESNT HAVE CRON IT HAS SYSTEMD TIMERS, This will print the timers that are RUNNING~, press y."
 space
-read ok
+read h
 space
-red "Manual /etc/crontab inspection on Enter"
-read enter
+systemctl list-timers --all
 space
-nano /etc/crontab
 space
+red "TAKE A LOOK AT THOSEE, THE NEXT ONE WILL LIST ALLLLLLL, even if they're not running.
+space
+systemctl list-units --type=timer
+space
+red "Done. press y to continue after inspecting the above."
+read y
 #-----------------------------------------------------------------------------
 
 
