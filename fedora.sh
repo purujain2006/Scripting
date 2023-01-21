@@ -572,7 +572,7 @@ red "Check these packages and the files created on your Desktop for malicious fi
 space
 
 dnf list installed --all | cut -d " " -f1 > /home/$CUSER/Desktop/listofallpackages.txt
-grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedorabasefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
+grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedorabasepackages.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt > /home/$CUSER/Desktop/differentsystempackagese.txt
 
