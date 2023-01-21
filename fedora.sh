@@ -179,7 +179,7 @@ grep -E 1[0-9]{3}  /etc/passwd | sed s/:/\ / | awk '{print $1}' > /home/$CUSER/D
 grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt /home/$CUSER/Desktop/Scripting-main/Scripting-main/allusers.txt > /home/$CUSER/Desktop/Scripting-main/Scripting-main/badusers.txt
 
 #delete all bad users
-for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/badusers.txt` ; do sudo deluser $i > /dev/null 2>&1 ; echo "Deleted user " $i;  done
+for i in `cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/badusers.txt` ; do sudo userdel $i > /dev/null 2>&1 ; echo "Deleted user " $i;  done
 
 #Check and Change UID's of 0 not Owned by Root
 printf "\033[1;31mChecking for 0 UID users...\033[0m\n"
@@ -456,7 +456,7 @@ space
 red "INSTALLING PAM RN SOOOOOOO PRAY IG? press y lol"
 space
 read hi
-sudo dnf install libpam-cracklib
+sudo dnf install libpwquality
 space
 #------------------------------------------------------------------------------------------
 
@@ -492,9 +492,15 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/httpd.conf > /etc
 
 nano /etc/httpd/conf/httpd.conf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /etc/sysctl.conf
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /usr/lib/sysctl.d/50-default
+nano /usr/lib/sysctl.d/50-default
 
-nano /etc/sysctl.conf
+space
+
+red "CHECK /etc/sysctl.d/99-sysctl.conf FOR THAT"
+read h
+
+space
 
 sysctl -ep
 
@@ -513,14 +519,12 @@ nano /etc/logrotate/logrotate.conf
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/common-account
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/common-auth
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/common-password
-
-rm -rf /etc/sysctl.d; cp -r /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.d /etc
-
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
 nano /etc/host.conf
 
 for i in `ls -a /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
+for i in `ls -a /root | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/my.cnf
 
@@ -753,7 +757,7 @@ space
 echo "###################################################"
 space
 
-red "Figure out whats going on what the above files, fix accordingly + manually look at /bin + /sbin with hidden files listed. Then press y"
+red "Figure out whats going on what the above files MAKE SURE THE FILES MENTIONED IN ISSUES DONT HAVE SUID BITS, fix accordingly + manually look at /bin + /sbin with hidden files listed. Then press y"
 space
 read y
 #------------------------------------------------------------------------------------------
@@ -915,7 +919,8 @@ fi
 
 #----------------
 space
-sudo ufw enable
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
 space
 red "MAKE SURE YOU OPEN CRITICAL SERVICE PORTS FOR FIREWALL (open 22 for ssh (make sure if you made it 100, make it 100))"
 space
