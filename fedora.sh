@@ -475,13 +475,11 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/fsudoers > /etc/s
 
 nano /etc/sudoers
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm/custom.conf
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/fcustom.conf > /etc/gdm/custom.conf
 
 nano /etc/gdm/custom.conf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/greeter.dconf-defaults > /etc/gdm3/greeter.dconf-defaults
-
-nano /etc/gdm3/greeter.dconf-defaults
+gsettings set org.gnome.login-screen disable-user-list true
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/login.defs > /etc/login.defs
 
