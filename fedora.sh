@@ -362,7 +362,6 @@ fi
 
 #update important packages
 #------------------------------------------------------------------------------------------
-sudo dnf install gufw -y
 sudo dnf install firefox -y
 sudo dnf install nautilus -y
 sudo dnf install kernel-core -y
@@ -571,82 +570,11 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/README > /etc/sud
 #------------------------------------------------------------------------------------------
 red "Check these packages and the files created on your Desktop for malicious files (read description):"
 space
-rpm -qa | grep -i wireless >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i http >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i capture >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i packet >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep TCP >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep IP >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i RDP >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i remote >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i torrent >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i unathorized >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i  vulnera >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i crack >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i password >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i Windows >> /home/$CUSER/Desktop/badfiles
-rpm -qa | grep -i bypass >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i gain >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i access >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i backdoor >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i exploit >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i scan >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i brute >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i sniff >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i intercept >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i force >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i malware >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i map >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i network >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i phish >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i hack >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i request >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i domain >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i dns >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i breach >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i DoS >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i DDoS >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i web >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i clickjack >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i social >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i "social engineer" >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i rootkit >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i malicious >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i ware >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i game >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i server >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i telnet >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i SQL >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i injection >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i passive >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i active >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i fingerprint >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i chat >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i call >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i connect >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i talk >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i vino >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i database >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i daemon >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i pop3 >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i IMAP >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i reverse >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i engineer >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i manipulate >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i snmp >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i media >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i audacious >> /home/$CUSER/Desktop/badfiles.txt
-rpm -qa | grep -i trap >> /home/$CUSER/Desktop/badfiles.txt
 
-grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/badfiles.txt | grep -v lib | grep -v gir | grep -vF "fedora-" >  /home/$CUSER/Desktop/CHECKTHISfixedlistofpossiblebadstuff.txt
+dnf list installed --all | cut -d " " -f1 > /home/$CUSER/Desktop/listofallpackages.txt
+grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedorabasefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
-dnf list installed > /home/$CUSER/Desktop/listofallpackages.txt
-grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/basefiles.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
-
-cat /home/$CUSER/Desktop/differentsystempackages.txt | grep -v lib | grep -v python | grep -vF "fedora-" > /home/$CUSER/Desktop/differentsystempackagese.txt
+cat /home/$CUSER/Desktop/differentsystempackages.txt > /home/$CUSER/Desktop/differentsystempackagese.txt
 
 for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dnf list installed | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 
@@ -666,7 +594,6 @@ read e
 space
 echo "Look at all the symlinks"
 space
-cd /; ls -laR | grep ^- | awk -F ' ' '$2 > 1' | grep ^- > /tmp/ha.txt;clear; cat /tmp/ha.txt | grep ^- | awk -F " " '{print $NF}' > /tmp/heh.txt; for i in ` grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/safehlinks.txt /tmp/heh.txt`; do find | grep -w $i > /tmp/listofhardlinks; done; cat /tmp/listofhardlinks
 cd /;ls -laR | grep -w /bin | grep -w '\->' | grep -v systemctl | grep -v kmod | grep -vF "ld." | grep -v less | grep -v touch | grep -v which | grep -vw ip | grep -w '\->' > /tmp/sym; clear; cat /tmp/sym
 space
 echo "Press enter when you're done checking out the symlinks"
