@@ -576,7 +576,7 @@ grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedorabasepackages
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt > /home/$CUSER/Desktop/differentsystempackagese.txt
 
-for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dnf list installed | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
+for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dnf list installed --all | cut -d " " -f1 | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 
 cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSER/Desktop/removeduplicates.txt; sleep 3s; awk '!a[$0]++' /home/$CUSER/Desktop/removeduplicates.txt > /home/$CUSER/Desktop/finallist
 
