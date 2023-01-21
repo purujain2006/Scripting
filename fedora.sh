@@ -571,12 +571,12 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/README > /etc/sud
 red "Check these packages and the files created on your Desktop for malicious files (read description):"
 space
 
-dnf list installed --all | cut -d " " -f1 > /home/$CUSER/Desktop/listofallpackages.txt
+dnf list installed| cut -d " " -f1 > /home/$CUSER/Desktop/listofallpackages.txt
 grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/fedorabasepackages.txt /home/$CUSER/Desktop/listofallpackages.txt > /home/$CUSER/Desktop/differentsystempackages.txt
 
 cat /home/$CUSER/Desktop/differentsystempackages.txt > /home/$CUSER/Desktop/differentsystempackagese.txt
 
-for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dnf list installed --all | cut -d " " -f1 | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
+for i in `cat /home/$CUSER/Desktop/differentsystempackagese.txt`; do dnf list installed| cut -d " " -f1 | grep -wF $i >> /home/$CUSER/Desktop/Differentsystempackages.txt; done
 
 cat /home/$CUSER/Desktop/Differentsystempackages.txt | grep -v lib > /home/$CUSER/Desktop/removeduplicates.txt; sleep 3s; awk '!a[$0]++' /home/$CUSER/Desktop/removeduplicates.txt > /home/$CUSER/Desktop/finallist
 
