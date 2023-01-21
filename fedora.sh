@@ -514,10 +514,6 @@ nano /etc/firewalld/firewalld.conf
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > /etc/logrotate.conf
 
 nano /etc/logrotate/logrotate.conf
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/common-account
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/common-auth
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/common-password
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/host.conf
 
 nano /etc/host.conf
