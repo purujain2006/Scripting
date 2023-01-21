@@ -476,9 +476,9 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/fsudoers > /etc/s
 
 nano /etc/sudoers
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm3/custom.conf
+cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/custom.conf > /etc/gdm/custom.conf
 
-nano /etc/gdm3/custom.conf
+nano /etc/gdm/custom.conf
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/gdm3/greeter.dconf-defaults > /etc/gdm3/greeter.dconf-defaults
 
@@ -491,10 +491,6 @@ nano /etc/login.defs
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/httpd.conf > /etc/httpd/conf/httpd.conf
 
 nano /etc/httpd/conf/httpd.conf
-
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/rc.local > /etc/rc.local
-
-nano /etc/rc.local
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/sysctl.conf > /etc/sysctl.conf
 
