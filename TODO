@@ -83,6 +83,7 @@ Make sure 'route' command sends packets to the router?
 chmod 777 /etc/grub.d
 cat /etc/gdm3/greeter.dconf-defaults | grep disable-user-list', 'true'
 'cat /etc/host.conf | grep nospoof', 'on'
+  --> nospoof on is depricated
 
 sudo chmod 644 -R /*/*.conf
 
