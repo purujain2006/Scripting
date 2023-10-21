@@ -1,4 +1,4 @@
-#
+# https://github.com/cloud-gov/cg-harden-boshrelease/blob/master/jobs/harden/templates/files/etc/pam.d/common-auth
 # /etc/pam.d/common-auth - authentication settings common to all services
 #
 # This file is included from other service-specific PAM config files,
@@ -14,25 +14,18 @@
 # pam-auth-update(8) for details.
 
 # here are the per-package modules (the "Primary" block)
-auth	[success=1 default=ignore]	pam_unix.so nullok_secure
-auth optional pam_tally.so deny=5 unlock_time=900 onerr=fail audit even_deny_root_account silent
-
+auth    required                        pam_tally2.so onerr=fail audit silent deny=5 unlock_time=900 even_deny_root_account
+auth    [success=1 default=ignore]      pam_unix.so
 # here's the fallback if no module succeeds
-auth	requisite			pam_deny.so
+auth    requisite                       pam_deny.so
 # prime the stack with a positive return value if there isn't one already;
-
-    
-          
-            
-    
-
-          
-    
-    
-  
 # this avoids us returning an error just because nothing sets a success code
 # since the modules above will each just jump around
-auth	required			pam_permit.so
+auth    required                        pam_permit.so
 # and here are more per-package modules (the "Additional" block)
-auth	optional			pam_cap.so
+auth    [success=2 default=ignore]      pam_pkcs11.so
+auth    [default=die]                   pam_faillock.so authfail
+auth    sufficient                      pam_faillock.so authsucc
+auth    required                        pam_faildelay.so    delay=4000000
+
 # end of pam-auth-update config
