@@ -528,7 +528,13 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/logrotate.conf > 
 
 nano /etc/logrotate.conf
 
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-account > /etc/pam.d/common-account
+space
+space
+red "Check common-account after pressing y, you removed it just in case it broke but it could be like vulnerable so DO IT MANUALLY"
+read hissss
+space
+space
+
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-auth > /etc/pam.d/common-auth
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/pam.d/common-password > /etc/pam.d/common-password
 
