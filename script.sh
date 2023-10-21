@@ -59,10 +59,10 @@ read CUSER
 
 #Updates
 #------------------------------------------------------------------------------------------
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list > /etc/apt/sources.list
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list.save > /etc/apt/sources.list.save
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/10periodic > /etc/apt/apt.conf.d/10periodic
-cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/20auto-upgrades > /etc/apt/apt.conf.d/20auto-upgrades
+#cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list > /etc/apt/sources.list
+#cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list.save > /etc/apt/sources.list.save
+#cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/10periodic > /etc/apt/apt.conf.d/10periodic
+#cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/apt.conf.d/20auto-upgrades > /etc/apt/apt.conf.d/20auto-upgrades
 space
 red "Make sure your update settings are up to date"
 space
