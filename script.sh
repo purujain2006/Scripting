@@ -475,7 +475,7 @@ space
 red "INSTALLING PAM RN SOOOOOOO PRAY IG? press y lol"
 space
 read hi
-sudo apt install libpam-cracklib
+sudo apt install libpam-pwquality
 space
 #------------------------------------------------------------------------------------------
 
