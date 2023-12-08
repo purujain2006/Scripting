@@ -13,5 +13,7 @@ alias
 
 grub.d ;
 
+lsattr /etc and other things?
+
 "
 
