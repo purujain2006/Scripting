@@ -555,6 +555,7 @@ cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/host.conf > /etc/
 nano /etc/host.conf
 
 for i in `ls -a /home | grep -v lost`;do cd /home/$i; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /home/$i/.bashrc; chmod 644 .bashrc; cd /; done
+cd /root; cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/.bashrc > /root/.bashrc; chmod 644 .bashrc; cd /
 
 cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/my.cnf > /etc/mysql/my.cnf
 
