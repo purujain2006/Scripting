@@ -882,7 +882,33 @@ read y
 space
 red "Delete suspicious suid bit files"
 space
-find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -la {} \; | awk -F " " '{print $NF}' > /tmp/suidbits; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/oksuid /tmp/suidbits
+find / -perm /4000 > /tmp/test1; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/suid /tmp/test1 > /tmp/suidfinal
+find / -perm /2000 > /tmp/test2; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/sgid /tmp/test2 > /tmp/sgidfinal
+find / -perm /6000 > /tmp/test3; grep -Fxvf /home/$CUSER/Desktop/Scripting-main/Scripting-main/bothsuidsgid /tmp/test3 > /tmp/bothfinal
+clear
+red "##########################################"
+red "                 BAD SUID                 "
+red "##########################################"
+space
+cat /tmp/suidfinal
+space
+space
+echo "Done?"
+read boooooooo
+red "##########################################"
+red "                 BAD SGID                 "
+red "##########################################"
+space
+cat /tmp/sgidfinal
+space
+space
+echo "Done?"
+read booooooo
+red "##########################################"
+red "                 BAD SUID                 "
+red "##########################################"
+space
+cat /tmp/bothfinal
 space
 space
 echo "Done?"
