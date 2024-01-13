@@ -44,7 +44,7 @@ space
 red "Change any unwanted alias by manual inspection, use unalias (aliasname) to get rid of alias"
 read alias
 space
-red "Check for poisoned files by using debsums -c and fix it (research/replace it with correct file)"
+red "Check for poisoned files by using debsums -ca and fix it (research/replace it with correct file)"
 read ao
 #------------------------------------------------------------------------------------------
 
