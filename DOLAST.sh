@@ -112,10 +112,11 @@ df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -typ
 
 sudo apt-get update 
 sudo apt upgrade
+pam-auth-update --force
 
 sudo ufw enable
 space
-red "MAKE SURE TO OPEN PORTS TO CRITICAL SERVICES (open port 22 for ssh (make sure its the port that YOU changed it to))"
+red "MAKE SURE TO OPEN PORTS TO CRITICAL SERVICES (open port 22 for ssh (make sure its the port that YOU changed it to)) ALSO CHECK IF PAM CONFIGS REVERTED"
 read apple
 space
 red "Done."
