@@ -63,6 +63,10 @@ sudo chattr -iaR /bin
 sudo chattr -iaR /home
 sudo chattr -iaR /sbin
 sudo chattr -iaR /usr
+sudo chown -R root:root /bin
+sudo chown -R root:root /sbin
+sudo chown -R root:root /usr/bin
+sudo chown -R root:root /usr/sbin
 clear
 
 #Updates
