@@ -57,6 +57,14 @@ blue "What is the name of the user you are currently using?"
 read CUSER
 #------------------------------------------------------------------------------------------
 
+clear
+sudo chattr -iaR /etc
+sudo chattr -iaR /bin
+sudo chattr -iaR /home
+sudo chattr -iaR /sbin
+sudo chattr -iaR /usr
+clear
+
 #Updates
 #------------------------------------------------------------------------------------------
 #cat /home/$CUSER/Desktop/Scripting-main/Scripting-main/Configs/apt/sources.list > /etc/apt/sources.list
