@@ -495,7 +495,7 @@ space
 #manual
 #------------------------------------------------------------------------------------------
 space
-echo "GO RUN THROUGH EVERY USER'S DIRECTORY and then press y"
+echo "GO RUN THROUGH EVERY USER'S DIRECTORY and CHECK /etc/rc.d/init.d then press y"
 space
 read x
 #------------------------------------------------------------------------------------------
