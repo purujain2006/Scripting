@@ -63,6 +63,7 @@ sudo chattr -iaR /bin
 sudo chattr -iaR /home
 sudo chattr -iaR /sbin
 sudo chattr -iaR /usr
+sudo chattr -iaR /var
 sudo chown -R root:root /bin
 sudo chown -R root:root /sbin
 sudo chown -R root:root /usr/bin
