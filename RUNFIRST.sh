@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ########################################################
 # https://github.com/UCI-CCDC/CCDC
 #UCI CCDC linux script for inventory & common operations
