@@ -44,3 +44,11 @@
 /etc/apt/auth.conf.d
 /etc/apt/preferences.d
 /etc/apt/sources.list.d
+/etc/mysql
+/etc/mysql/conf.d
+/etc/mysql/mariadb.conf.d
+/etc/apache2/conf-enabled
+/etc/apache2/sites-enabled
+/etc/nginx/conf.d
+/etc/nginx/sites-enabled
+/etc/nginx/modules-enabled
