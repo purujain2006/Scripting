@@ -30,7 +30,7 @@ function dblue(){
 #LEGAL NOTICE
 #------------------------------------------------------------------------------------------
 space
-echo "Script made by Puru Jain for CyberPatriot. If this script is found, it is not to be used for anyone's use in the CyberPatriot competitions"
+echo "Script made by Puru Jain for CyberPatriot."
 space
 #------------------------------------------------------------------------------------------
 
