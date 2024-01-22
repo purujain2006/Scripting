@@ -1,3 +1,4 @@
+Due to the fact I made a typo and was too lazy to change it, download the thing, extract, and within the Scripting-main folder, add another Scripting-main folder - depositing all files into it.
 
 Add all authorized users except your own into /home/$CUSER/Desktop/Scripting-main/Scripting-main/users.txt
 
